@@ -5,7 +5,8 @@ Make to 24 daily game for CITS3403 Project
 | Package | Site | Guide |
 | ----------- | ----------- | ----------- |
 | mysql | https://dev.mysql.com/downloads/installer/ | https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/ |
-| python | https://www.python.org/downloads/ | https://realpython.com/installing-python/
+| python | https://www.python.org/downloads/ | https://realpython.com/installing-python/ |
+| Bootstrap| https://getbootstrap.com/docs/5.1/getting-started/download/ | https://www.makeuseof.com/bootstrap-beginners-guide/ |
 
 ## Branches/Workflow
 Sample workflow to follow for organisation purposes. Please collaborate on tasks that might have conflicting commits by either avoiding or fixing the conflicts.
