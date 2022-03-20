@@ -2,8 +2,7 @@
 Make to 24 daily game web application for CITS3403 Project
 
 ## Purpose
-To tests player's mental arithmetic.
-```
+To tests player's mental arithmetic.</br>
 How to play:
 You are randomly given four digits, each from one to nine, with repetitions allowed.
 The objective is to use the four symbols of addition(+), subtraction(-), multiplication(×), and division(÷) to calculate the four given digits and make the result equals to 24.
