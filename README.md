@@ -9,16 +9,17 @@ The objective is to use the four symbols of addition(+), subtraction(-), multipl
 
 ## architecture
 
-## How launch the web application
+## How to launch the web application
 
 ## Unit/Integration Testing
 
 ## Pre-Setup
 | Package | Site | Guide |
 | ----------- | ----------- | ----------- |
+| Git | https://git-scm.com/download/win | https://www.youtube.com/watch?v=HfTXHrWMGVY&list=PLZlA0Gpn_vH9xx-RRVNG187ETT2ekWFsq&index=2 |
 | mysql | https://dev.mysql.com/downloads/installer/ | https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/ |
 | python | https://www.python.org/downloads/ | https://realpython.com/installing-python/ |
-| Bootstrap| https://getbootstrap.com/docs/5.1/getting-started/download/ | https://www.makeuseof.com/bootstrap-beginners-guide/ |
+| Bootstrap | https://getbootstrap.com/docs/5.1/getting-started/download/ | https://www.makeuseof.com/bootstrap-beginners-guide/ |
 
 ## Branches/Workflow
 Sample workflow to follow for organisation purposes. Please collaborate on tasks that might have conflicting commits by either avoiding or fixing the conflicts.
