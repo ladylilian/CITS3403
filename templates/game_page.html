@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="game_page_style.css">
-  <title>24 Game</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block head %}
+  <!-- <link rel="stylesheet" href="game_page_style.css"> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/game_page_style.css') }}">
+{% endblock %}
+{% block body %}
   <div class="number_container">
-      <div class="pull-left">
+      <div>
         <button class="btn number n_one">1</button>
       </div>
       <div class="">
@@ -17,7 +14,7 @@
       </div>
   </div>
   <div class="number_container">
-      <div class="pull-left">
+      <div>
         <button class="btn number n_three">3</button>
       </div>
       <div class="">
@@ -27,8 +24,7 @@
   <div class="symbol_container">
       <button type="button" class="btn symbol s_one">+</button>
       <button type="button" class="btn symbol s_two">-</button>
-      <button type="button" class="btn symbol s_three">×</button>
+      <button type="button" class="btn symbol s_three">x</button>
       <button type="button" class="btn symbol s_four">÷</button>
   </div>
-</body>
-</html>
+{% endblock %}
