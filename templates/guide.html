@@ -1,0 +1,25 @@
+{% extends "header.html" %}
+
+{% block modal %}
+  <!-- Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title"><p>How to play</p></div>
+          <a class="btn-close" href="{{url_for('index')}}" aria-label="Close"></a>
+        </div>
+        <div class="modal-body">
+          <canvas id="canvas"></canvas>
+          <!-- javascripts animations -->
+          <!-- https://www.coolmathgames.com/0-number-solver -->
+          <!-- ...https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="page-mask"></div>
+{% endblock %}
+{% block script %}
+<script src="{{url_for('static', filename='javascripts/guide.js')}}"></script>
+{% endblock %}

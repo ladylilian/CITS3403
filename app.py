@@ -6,14 +6,17 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db = SQLAlchemy(app)
 
 
-
-@app.route('/login')
-def login():
-    return render_template('login-page.html')
-
 @app.route('/')
 def index():
     return render_template('game_page.html')
+
+@app.route('/guide')
+def guide():
+    return render_template('guide.html')
+
+@app.route('/ranking')
+def rank():
+    return render_template('ranking.html')
 
 if __name__ == "__main__":
     app.run(debug=True) 

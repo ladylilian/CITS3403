@@ -1,30 +1,25 @@
-{% extends 'base.html' %}
+{% extends "header.html" %}
 
-{% block head %}
-  <!-- <link rel="stylesheet" href="game_page_style.css"> -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles/game_page_style.css') }}">
-{% endblock %}
-{% block body %}
-  <div class="number_container">
-      <div>
-        <button class="btn number n_one">1</button>
-      </div>
-      <div class="">
-        <button class="btn number n_two">2</button>
-      </div>
-  </div>
-  <div class="number_container">
-      <div>
-        <button class="btn number n_three">3</button>
-      </div>
-      <div class="">
-          <button class="btn number n_four">4</button>
-      </div>
-  </div>
-  <div class="symbol_container">
+{% block game_board %}
+<div class="isolated">
+  <div class="game-board">
+    <div class="number_container">
+      <button class="btn number n_one">1</button>
+      <button class="btn number n_two">2</button>
+    </div>
+    <div class="number_container">
+      <button class="btn number n_three">3</button>
+      <button class="btn number n_four">4</button>
+    </div>
+    <div class="symbol_container">
       <button type="button" class="btn symbol s_one">+</button>
       <button type="button" class="btn symbol s_two">-</button>
       <button type="button" class="btn symbol s_three">x</button>
       <button type="button" class="btn symbol s_four">÷</button>
+    </div>
   </div>
+</div>
 {% endblock %}
+</body>
+{% block script %}{% endblock %}
+</html>

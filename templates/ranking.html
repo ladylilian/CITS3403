@@ -1,0 +1,21 @@
+{% extends "header.html" %}
+
+{% block rank %}
+  <!-- rank -->
+  <div class="rank fade" id="myrank">
+    <div class="rank-dialog">
+      <div class="rank-content">
+        <div class="rank-header">
+          <div class="rank-title"><p>Rank</p></div>
+          <a class="btn-close" href="{{url_for('index')}}" aria-label="Close"></a>
+        </div>
+        <div class="rank-body">
+          <div class="current-score"><p>417</p></div> <!-- replace 417 with {{ score }},  get from db -->
+          <div class="global-ranking">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
