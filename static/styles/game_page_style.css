@@ -160,3 +160,9 @@
   background-color: #cd8079;
   box-shadow: 3px 3px #876865, 6px 6px 2px #ffc3be;
 }
+
+/* .isolated #page_mask .active{
+  filter: opacity(50%);
+  pointer-events: none;
+  user-select: none;
+} */

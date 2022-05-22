@@ -57,12 +57,18 @@ with '24 Game' text*/
   }
 
 .container#blur.active{
-  filter: opacity(30%);
+  filter: opacity(35%);
   pointer-events: none;
   user-select: none;
 }
 
 #myModal.active{
+  visibility: visible;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+#myrank.active{
   visibility: visible;
   opacity: 1;
   transition: 0.3s;
