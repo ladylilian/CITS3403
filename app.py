@@ -14,7 +14,7 @@ def index():
 def guide():
     return render_template('guide.html')
 
-@app.route('/rank')
+@app.route('/ranking')
 def rank():
     return render_template('ranking.html')
 
@@ -22,6 +22,5 @@ def rank():
 def login():
     return render_template('login_page.html')
 
-
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True) 

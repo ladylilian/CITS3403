@@ -97,3 +97,10 @@ function clock() {
   }
   
   window.requestAnimationFrame(clock);
+
+  function toggle_helpButton(){
+    var blur = document.getElementById('blur');
+    blur.classList.toggle('active');
+    var myModal = document.getElementById('myModal');
+    myModal.classList.toggle('active');
+  };

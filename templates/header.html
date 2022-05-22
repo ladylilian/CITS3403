@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/header.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/game_page_style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/guide.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/login_page_style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/ranking.css') }}">
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
     <script src="https://kit.fontawesome.com/42fa0df289.js" crossorigin="anonymous"></script>
@@ -21,40 +20,34 @@
               <div class="header">
                 <div class="title">24 game</div>
                 <div class="header-btns">
-                  <a class="btn-help" href="#" onclick="toggle()"><i class="fa-regular fa-circle-question fa-lg"></i></a>
+                  <a class="btn-help" href="#" onclick="toggle_helpButton()"><i class="fa-regular fa-circle-question fa-lg"></i></a>
                   <a class="btn-share" href="https://www.facebook.com/sharer/sharer.php?u=https://www.w3schools.com/jquery/jquery_get_started.asp" target="_blank"><i class="fa-solid fa-share-nodes fa-lg"></i></a>
-                  <a class="btn-rank" href="{{url_for('rank')}}"><i class="fa-solid fa-ranking-star fa-lg"></i></a>
+                  <a class="btn-rank" href="#" onclick="toggle_rankButton()"><i class="fa-solid fa-ranking-star fa-lg"></i></a>
                 </div>
               </div>
     </header>
+  <!-- Game_board -->
   {% block game_board %}{% endblock %}
   {% block game_script %}{% endblock %}
   {% block rank %}{% endblock %}
 </div>
-<!-- Modal -->
-  <div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="modal-title"><p>How to play</p></div>
-          <a class="btn-close" href="#" aria-label="Close" onclick="toggle()"></a>
-        </div>
-        <div class="modal-body">
-          <canvas id="canvas"></canvas>
-          <!-- javascripts animations -->
-          <!-- https://www.coolmathgames.com/0-number-solver -->
-          <!-- ...https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations -->
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- Guide -->
+<div id="guide">{% include "guide.html" %}</div>
+<!-- Rank -->
+<div id="rank">{% include "ranking.html" %}</div>
   <script>
-    function toggle(){
+    function toggle_helpButton(){
       var blur = document.getElementById('blur');
       blur.classList.toggle('active');
       var myModal = document.getElementById('myModal');
       myModal.classList.toggle('active');
-    }
+    };
+    function toggle_rankButton(){
+      var blur = document.getElementById('blur');
+      blur.classList.toggle('active');
+      var myrank = document.getElementById('myrank');
+      myrank.classList.toggle('active');
+    };
   </script>
 </body>
 </html>

@@ -201,7 +201,13 @@ function disablenumberbutton(e) {
   var selected_numbers = [];
   var selected_symbols = [];
   answer = document.getElementById("answer_1")
-  e.target.value
+  $(document).ready(function(){
+    $(".button").click(function() {
+      var fired_button = $(this).val();
+      alert(fired_button);
+      answer.innerText += fired_button;
+    });
+  });
   // numberButtons.forEach( number => {
   //   number.addEventListener('click', (e) => {
   //     console.log('clicked');
