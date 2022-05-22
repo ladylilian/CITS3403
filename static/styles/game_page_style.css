@@ -14,13 +14,17 @@
   border-radius: 4px;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-.isolated .btn:hover{
+.isolated .btn:hover:enabled{
   transform: translate3d(0, -2px, 0);
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
-.isolated .btn:active{
+.isolated .btn:active:enabled{
   transform: translate3d(0, 1px, 0);
 }
+/* .isolated .btn:disabled{
+  cursor: default;
+} */
+
 
 /* numbers */
 .isolated .number_container{
@@ -34,55 +38,55 @@
   width: 100px;
   transition: background-color .2s, transform .2s, box-shadow .2s;
 }
-.isolated .number:hover, .isolated .number:focus, .isolated .number:active, .isolated .number:checked{
+.isolated .number:hover:enabled, .isolated .number:focus:enabled, .isolated .number:active:enabled {
   text-shadow: 2px 2px 1px #6b504e;
 }
 
  /* n_one */
- .isolated .n_one, .isolated .n_one:hover {
+ #n_one, #n_one:hover:enabled {
   color: #fff;
   background-color: #4285F4;
   box-shadow: 3px 3px #0746a4;
 }
 
-.isolated .n_one:focus, .isolated .n_one:active, .isolated .n_one:checked{
+#n_one:focus:enabled, #n_one:active:enabled {
   color: #fff;
   background-color: #0b5ed7;
   box-shadow: 3px 3px #0746a4, 7px 7px 2px rgba(49, 132, 253, 0.5);
 }
 
 /* n_two */
-.isolated .n_two, .isolated .n_two:hover {
+#n_two, #n_two:hover:enabled {
   color: #fff;
   background-color: #34A843;
   box-shadow: 3px 3px #1e6027;
 }
 
-.isolated .n_two:focus, .isolated .n_two:active, .isolated .n_two:checked {
+#n_two:focus:enabled, #n_two:active:enabled {
   color: #fff;
   background-color: #198127;
   box-shadow: 3px 3px #1e6027, 7px 7px 2px rgba(60, 153, 110, 0.5);
 }
 
 /* n_three */
-.isolated .n_three, .isolated .n_three:hover {
+#n_three, #n_three:hover:enabled {
   color: #fff;
   background-color: #FBBC08;
   box-shadow: 3px 3px #9c7407;
 }
-.isolated .n_three:focus, .isolated .n_three:active, .isolated .n_three:checked {
+#n_three:focus:enabled, #n_three:active:enabled {
   color: #fff;
   background-color: #e0a606;
   box-shadow: 3px 3px #9c7407, 7px 7px 2px rgba(217, 164, 6, 0.5);
 }
 
 /* n_four */
-.isolated .n_four, .isolated .n_four:hover {
+#n_four, #n_four:hover:enabled {
   color: #fff;
   background-color: #EA4335;
   box-shadow: 3px 3px #802219;
 }
-.isolated .n_four:focus, .isolated .n_four:active, .isolated .n_four:checked {
+#n_four:focus:enabled #n_four:active:enabled {
   color: #fff;
   background-color: #be362a;
   box-shadow: 3px 3px #802219, 7px 7px 2px rgba(225, 83, 97, 0.5);
@@ -102,53 +106,56 @@
   width: 50px;
   transition: background-color .15s, transform .15s, box-shadow .15s;
 }
-.isolated .symbol:hover, .isolated .symbol:focus, .isolated .symbol:active, .isolated .symbol:checked{
+.isolated .symbol:disabled{
+  cursor: default;
+}
+.isolated .symbol:hover:enabled, .isolated .symbol:focus:enabled, .isolated .symbol:active:enabled {
   text-shadow: 2px 2px 1px #876865;
 }
 
 /* s_one */
-.isolated .s_one, .isolated .s_one:hover {
+#s_one, #s_one:hover:enabled {
   color: #fff;
   background-color: #9ab5e0;
   box-shadow: 3px 3px #637693;
 }
-.isolated .s_one:focus, .isolated .s_one:active, .isolated .s_one:checked{
+#s_one:focus:enabled, #s_one:active:enabled {
   color: #fff;
   background-color: #7da2df;
   box-shadow: 3px 3px #637693, 6px 6px 2px #c2d4f0;
 }
 
 /* s_two */
-.isolated .s_two, .isolated .s_two:hover {
+#s_two, #s_two:hover:enabled {
   color: #fff;
   background-color: #b1e3b6;
   box-shadow: 3px 3px #7ba17f;
 }
-.isolated .s_two:focus, .isolated .s_two:active, .isolated .s_two:checked{
+#s_two:focus:enabled, #s_two:active:enabled {
   color: #fff;
   background-color: #87c18d;
   box-shadow: 3px 3px #7ba17f, 6px 6px 2px #baebc0;
 }
   
 /* s_three */
-.isolated .s_three, .isolated .isolated .s_three:hover {
+#s_three, #s_three:hover:enabled {
   color: #fff;
   background-color: #ebd28c;
   box-shadow: 3px 3px #8a7b52;
 }
-.isolated .s_three:focus, .isolated .s_three:active, .isolated .s_three:checked{
+#s_three:focus:enabled, #s_three:active:enabled {
   color: #fff;
   background-color: #e9c563;
   box-shadow: 3px 3px #8a7b52, 6px 6px 2px #ffe59e;
 }
 
 /* s_four */
-.isolated .s_four, .isolated .s_four:hover {
+#s_four, #s_four:hover:enabled {
   color: #fff;
   background-color: #e4ada8;
   box-shadow: 3px 3px #876865;
 }
-.isolated .s_four:focus, .isolated .s_four:active, .isolated .s_four:checked{
+#s_four:focus:enabled, #s_four:active:enabled {
   color: #fff;
   background-color: #cd8079;
   box-shadow: 3px 3px #876865, 6px 6px 2px #ffc3be;

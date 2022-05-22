@@ -1,25 +1,29 @@
 {% extends "header.html" %}
 
 {% block game_board %}
-<div class="isolated">
+<div class="isolated" id="blur">
   <div class="game-board">
     <div class="number_container">
-      <button class="btn number n_one">1</button>
-      <button class="btn number n_two">2</button>
+      <input type="button" class="number btn" id="n_one" onclick="disablenumberbutton()">
+      <input type="button" class="number btn" id="n_two" onclick="disablenumberbutton()">
     </div>
     <div class="number_container">
-      <button class="btn number n_three">3</button>
-      <button class="btn number n_four">4</button>
+      <input type="button" class="number btn" id="n_three" onclick="disablenumberbutton()">
+      <input type="button" class="number btn" id="n_four" onclick="disablenumberbutton()">
     </div>
     <div class="symbol_container">
-      <button type="button" class="btn symbol s_one">+</button>
-      <button type="button" class="btn symbol s_two">-</button>
-      <button type="button" class="btn symbol s_three">x</button>
-      <button type="button" class="btn symbol s_four">÷</button>
+      <input type="button" class="btn symbol" id="s_one" value="+" disabled onclick="disablesymbolbutton()">
+      <input type="button" class="btn symbol" id="s_two" value="-" disabled onclick="disablesymbolbutton()">
+      <input type="button" class="btn symbol" id="s_three" value="x" disabled onclick="disablesymbolbutton()">
+      <input type="button" class="btn symbol" id="s_four" value="÷" disabled onclick="disablesymbolbutton()">
     </div>
   </div>
 </div>
+<div id="answer_1">answer:</div>
+<!-- <button id="solve" onclick="solve_wrap()">solve</button> -->
+<button id="changeNumbers" onclick="generate_new()">generate new</button>
+<script src="{{url_for('static', filename='javascripts/game_page.js')}}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 {% endblock %}
 </body>
-{% block script %}{% endblock %}
 </html>

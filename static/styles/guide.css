@@ -6,13 +6,19 @@
 html, body { 
   height: 100%; 
 }
-#page-mask {
+/* #page-mask {
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
   top: 0;
   background-color: rgba(0,0,0,0.6);
+} */
+
+#myModal{
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
 }
 .modal {
   position: absolute;

@@ -13,21 +13,47 @@
     <title>{% block title %} 24 Game {% endblock %}</title>
 </head>
 <body>
+  <div class="container" id="blur">
     <header>
         <div class="isolated">
             <div class="body-wrapper">
               <div class="header">
                 <div class="title">24 game</div>
                 <div class="header-btns">
-                  <a class="btn-help" href="{{url_for('guide')}}"><i class="fa-regular fa-circle-question fa-lg"></i></a>
+                  <a class="btn-help" href="#" onclick="toggle()"><i class="fa-regular fa-circle-question fa-lg"></i></a>
                   <a class="btn-share" href="https://www.facebook.com/sharer/sharer.php?u=https://www.w3schools.com/jquery/jquery_get_started.asp" target="_blank"><i class="fa-solid fa-share-nodes fa-lg"></i></a>
                   <a class="btn-rank" href="{{url_for('rank')}}"><i class="fa-solid fa-ranking-star fa-lg"></i></a>
                 </div>
               </div>
     </header>
-{% block game_board %}{% endblock %}
-{% block modal %}{% endblock %}
-{% block script %}{% endblock %}
-{% block rank %}{% endblock %}
+  {% block game_board %}{% endblock %}
+  {% block game_script %}{% endblock %}
+  {% block rank %}{% endblock %}
+</div>
+<!-- Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title"><p>How to play</p></div>
+          <a class="btn-close" href="{{url_for('index')}}" aria-label="Close" onclick="toggle()"></a>
+        </div>
+        <div class="modal-body">
+          <canvas id="canvas"></canvas>
+          <!-- javascripts animations -->
+          <!-- https://www.coolmathgames.com/0-number-solver -->
+          <!-- ...https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function toggle(){
+      var blur = document.getElementById('blur');
+      blur.classList.toggle('active');
+      var myModal = document.getElementById('blur');
+      myModal.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>

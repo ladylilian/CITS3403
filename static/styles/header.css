@@ -26,7 +26,7 @@
     letter-spacing: 0.01em;
     justify-content: center;
     text-align: center;
-    cursor:default;
+    cursor: default;
 }
 
 .header-btns{
@@ -55,3 +55,15 @@ with '24 Game' text*/
         display: none;
     }
   }
+
+.container#blur.active{
+  filter: blur(10px);
+  pointer-events: none;
+  user-select: none;
+}
+
+#myModal.active{
+  visibility: visible;
+  opacity: 1;
+  transition: 0.3s;
+}
