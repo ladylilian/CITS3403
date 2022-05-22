@@ -5,7 +5,6 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db = SQLAlchemy(app)
 
-###hi
 
 @app.route('/')
 def index():
@@ -15,9 +14,14 @@ def index():
 def guide():
     return render_template('guide.html')
 
-@app.route('/ranking')
+@app.route('/rank')
 def rank():
     return render_template('ranking.html')
+
+@app.route('/login')
+def login():
+    return render_template('login_page.html')
+
 
 if __name__ == "__main__":
     app.run(debug=True)

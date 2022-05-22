@@ -18,7 +18,6 @@ html, body {
 #myModal{
   visibility: hidden;
   opacity: 0;
-  transition: 0.3s;
 }
 .modal {
   position: absolute;
