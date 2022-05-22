@@ -62,14 +62,4 @@ with '24 Game' text*/
   user-select: none;
 }
 
-#myModal.active{
-  visibility: visible;
-  opacity: 1;
-  transition: 0.3s;
-}
 
-#myrank.active{
-  visibility: visible;
-  opacity: 1;
-  transition: 0.3s;
-}

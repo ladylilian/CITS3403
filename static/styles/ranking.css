@@ -4,7 +4,11 @@ html, body {
 #myrank{
   visibility: hidden;
   opacity: 0;
-  transition: 0.3s;
+}
+#myrank.active{
+  visibility: visible;
+  opacity: 1;
+  transition: 0.2s;
 }
 .rank {
   position: absolute;
