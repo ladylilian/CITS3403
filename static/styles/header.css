@@ -57,7 +57,7 @@ with '24 Game' text*/
   }
 
 .container#blur.active{
-  filter: blur(10px);
+  filter: opacity(30%);
   pointer-events: none;
   user-select: none;
 }
