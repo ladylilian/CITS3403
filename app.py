@@ -18,5 +18,9 @@ def guide():
 def rank():
     return render_template('ranking.html')
 
+@app.route('/login')
+def login():
+    return render_template('login_page.html')
+
 if __name__ == "__main__":
     app.run(debug=True) 
