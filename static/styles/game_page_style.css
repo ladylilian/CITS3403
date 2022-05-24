@@ -1,4 +1,10 @@
 /* all buttons */
+.isolated{
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+}
 .game-board{
   padding-top: 100px;
 }
@@ -21,9 +27,9 @@
 .isolated .btn:active:enabled{
   transform: translate3d(0, 1px, 0);
 }
-/* .isolated .btn:disabled{
+.isolated .btn:disabled{
   cursor: default;
-} */
+}
 
 
 /* numbers */
@@ -105,9 +111,6 @@
   height: 50px;
   width: 50px;
   transition: background-color .15s, transform .15s, box-shadow .15s;
-}
-.isolated .symbol:disabled{
-  cursor: default;
 }
 .isolated .symbol:hover:enabled, .isolated .symbol:focus:enabled, .isolated .symbol:active:enabled {
   text-shadow: 2px 2px 1px #876865;
