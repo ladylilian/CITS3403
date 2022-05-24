@@ -2,20 +2,22 @@
 
 {% block game_board %}
 <div class="isolated"> <!-- id="page_mask" -->
-  <div class="game-board">
+  <div class="game-board"> <!--onclick="showCoords(event)"-->
     <div class="number_container">
-      <input type="button" class="number btn" id="n_one" onclick="disablenumberbutton()">
-      <input type="button" class="number btn" id="n_two" onclick="disablenumberbutton()">
+      <input type="button" class="number btn" id="n_one" onclick="getNumber(this)">
+      <input type="button" class="number btn" id="n_two" onclick="getNumber(this)">
     </div>
     <div class="number_container">
-      <input type="button" class="number btn" id="n_three" onclick="disablenumberbutton()">
-      <input type="button" class="number btn" id="n_four" onclick="disablenumberbutton()">
+      <input type="button" class="number btn" id="n_three" onclick="getNumber(this)">
+      <input type="button" class="number btn" id="n_four" onclick="getNumber(this)">
     </div>
     <div class="symbol_container">
-      <input type="button" class="btn symbol" id="s_one" value="+" disabled onclick="disablesymbolbutton()">
-      <input type="button" class="btn symbol" id="s_two" value="-" disabled onclick="disablesymbolbutton()">
-      <input type="button" class="btn symbol" id="s_three" value="x" disabled onclick="disablesymbolbutton()">
-      <input type="button" class="btn symbol" id="s_four" value="÷" disabled onclick="disablesymbolbutton()">
+      <input type="button" class="btn symbol" id="s_one" value="+" disabled onclick="getSymbol(this)">
+      <input type="button" class="btn symbol" id="s_two" value="-" disabled onclick="getSymbol(this)">
+      <!-- <input type="button" class="btn symbol" id="s_three" value="*" disabled onclick="getSymbol(this)"> -->
+      <button type="button" class="btn symbol" id="s_three" value="*" disabled onclick="getSymbol(this)">x</button>
+      <!-- <input type="button" class="btn symbol" id="s_four" value="÷" disabled onclick="getSymbol(this)"> -->
+      <button type="button" class="btn symbol" id="s_four" value="/" disabled onclick="getSymbol(this)">÷</button>
     </div>
   </div>
 </div>

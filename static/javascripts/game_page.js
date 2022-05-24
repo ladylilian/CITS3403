@@ -1,4 +1,3 @@
-
 function generate_new() {
   var n_html = document.getElementsByClassName("number");
   let solved = false
@@ -170,8 +169,7 @@ function getPairs(arr) {
   }
   return out;
 }
-
-
+ // remove the elements whose indices are in indices list
 function removeDuplicates(arr) {
   var hash = {};
   var out = [];
@@ -185,58 +183,117 @@ function removeDuplicates(arr) {
   return out;
 }
 
-// const activearea = document.activeElement.id;
-// console.log(activearea);
-
-function disablenumberbutton(e) {
-  // var numbers = []
-  let numberButtons = Array.from(document.getElementsByClassName('number'));
-  let symbolButtons = document.querySelectorAll('.symbol');
-  const activearea = document.activeElement.className;
+// Calculate the click buttons
+var selected_numbers = [];
+var selected_symbols = [];
+var selected_Numids = [];
+var eqution = [];
+// function calculation(){
+//   while (selected_numbers.length < 4 &&selected_symbols.length < 3) {
+//     getNumber(ele);
+//     getSymbol(ele);
+//  };
+// };
+let numberButtons = Array.from(document.getElementsByClassName('number'));
+let symbolButtons = document.querySelectorAll('.symbol');
+function getNumber(ele) {
   for(let i = 0; i < symbolButtons.length; i++){
     symbolButtons[i].disabled = false;
-    } 
-  // console.log(numberButtons);
-  // console.log(activearea);
-  var selected_numbers = [];
-  var selected_symbols = [];
-  answer = document.getElementById("answer_1")
-  $(document).ready(function(){
-    $(".button").click(function() {
-      var fired_button = $(this).val();
-      alert(fired_button);
-      answer.innerText += fired_button;
-    });
-  });
-  // numberButtons.forEach( number => {
-  //   number.addEventListener('click', (e) => {
-  //     console.log('clicked');
-  //     selected_numbers.push(e.target.value);
-  //     console.log(selected_numbers);
-  //     answer.innerText += e.target.value
-  //   });
-  // });
-  // if (numberButtons.includes(activearea) == true) {
-  //   console.log('ok')
-  }
+    numberButtons[i].disabled = true;
+    }
+  selected_Numids.push(ele.id);
+  console.log(selected_Numids);
+  var btnNumber = ele.value;
+  var answer = document.getElementById("answer_1");
+  answer.innerText += btnNumber;
+  selected_numbers.push(btnNumber);
+  eqution.push(btnNumber);
+  console.log(eqution);
+  var ans = eval(eqution.join('').toString());
+  // var Clickbtn = ele.id;
+  // buttonAnimation(Clickbtn);
+  if (eqution.length == 3) {
+    eqution = [];
+    eqution.push(ans);
+    // console.log(ele);
+    ele.value = ans;
+  };
+  if (selected_Numids.length == 2) {
+    var Clickbtn = selected_Numids;
+    buttonAnimation(Clickbtn);
+    selected_Numids.shift();
+  };
+};
 
-//}
+function getSymbol(ele) {
+  for(let i = 0; i < symbolButtons.length; i++){
+    symbolButtons[i].disabled = true;
+    numberButtons[i].disabled = false;
+    }
+  var btnSymbol = ele.value;
+  var answer = document.getElementById("answer_1");
+  selected_symbols.push(btnSymbol)
+  eqution.push(btnSymbol)
+  answer.innerText += btnSymbol;
+  console.log(eqution);
+};
 
-// function disablesymbolbutton() {
-//   document.getElementByClassName("symbol").disabled = true;
-//   document.getElementByClassName("number").disabled = false;
+function buttonAnimation(listOftwoClickBtn){
+  console.log(listOftwoClickBtn)
+  var id_1 = listOftwoClickBtn[0];
+  var id_2 = listOftwoClickBtn[1];
+  console.log(id_1,id_2);
+  var id_2xClickBtnPosition = getClickBtnPosition(id_2)[0];
+  var id_2yClickBtnPosition = getClickBtnPosition(id_2)[1];
+  var id_1xClickBtnPosition = getClickBtnPosition(id_1)[0];
+  var id_1yClickBtnPosition = getClickBtnPosition(id_1)[1];
+  var relativexPosition =id_2xClickBtnPosition - id_1xClickBtnPosition
+  var relativeyPosition =id_2yClickBtnPosition - id_1yClickBtnPosition
+  // console.log(id_2xClickBtnPosition, id_2yClickBtnPosition)
+  console.log(id_2xClickBtnPosition, id_2yClickBtnPosition)
+  console.log(id_1xClickBtnPosition, id_1yClickBtnPosition)
+  console.log(relativexPosition, relativeyPosition)
+  var translate3dValue = "translate3d(" + relativexPosition + "px, " + relativeyPosition + "px, 0)";
+  document.getElementById(id_1).style.transform = translate3dValue;
+  document.getElementById(id_1).style.visibility = "hidden";
+  document.getElementById(id_2).focus();
+  //   fadeOut(document.getElementById(id_1))
+
+  // document.getElementById(id_1).style.transition= ".6s ease opacity,.6s ease transform";
+};
+
+function getClickBtnPosition(Clickbtn) {
+  // console.log(Clickbtn);
+  var Numid = document.getElementById(Clickbtn);
+  // const rect = Numid.getBoundingClientRect();
+  var position = $(Numid).position();
+  // console.log(Numid)
+  var x = position.left;
+  var y = position.top;
+  return [x,y];
+};
+
+
+// function fadeOut(element) {
+//   var op = 1;  // initial opacity
+//   var timer = setInterval(function () {
+//     if (op <= 0.1){
+//         clearInterval(timer);
+//         element.style.display = 'hidden';
+//     }
+//     element.style.opacity = op;
+//     element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+//     op -= op * 0.1;
+//     element.style.transition
+//   });
 // }
-
-
+// console.log(getClickBtnPosition(n_one)[0]);
 // const resrtButtons = document.querySelectorAll('[reset]')
 // function calculation(){
-//   var selected_numbers = []
-//   var selected_symbols = []
 //   while len(selected_numbers) < 4 && len(selected_symbols) < 3 {
 
 //  }
-//   var used_number = 4
-//   var used_symbol = 3
+
 //   var clicked = 0
 //   var j = 0
 //   while i < used_number && j < used_symbol{
@@ -251,20 +308,10 @@ function disablenumberbutton(e) {
 //   var = document.getElementsByClassName("s_one");
 // }
 
-// $(document).ready(function() {
-//   $('.number').on('click', function() {
-//       if($(this).onclick()) {
-//           $('.symbol').prop('disabled', false);
-//       } else {
-//           $('.symbol').prop('disabled', true);
-//       }
-//   });
-// });
 
-function getValue(e) {
-  alert(event.target.nodeName);
-}
-
-(function() {
+window.onload = (event) =>{
   generate_new();
-});
+};
+// (function() {
+//   generate_new();
+// });
