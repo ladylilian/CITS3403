@@ -1,34 +1,34 @@
 
 <!-- Modal -->
 <div class="modal fade" id="myModal">
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <div class="modal-title"><p>How to play</p></div>
-      <a class="btn-close" href="{{url_for('index')}}" aria-label="Close"></a>
-    </div>
-    <div class="modal-body">
-      You are randomly given four number cards, each from 1 to 9, with repetitions allowed.<br><br>
-      The objective is to combine all the number cards to equals 24 using:
-      <ul>
-        <li>Addition (+)</li>
-        <li>Subtraction (-)</li>
-        <li>Multiplication (×)</li>
-        <li>Division (÷)</li> 
-      </ul>
-      See demonstration from the video below.<br><br>
-      <iframe width="100%" height="50%" src="https://www.youtube.com/embed/k8gpSRh-sok?&autoplay=1 " title="YouTube video player" frameborder="0" allowfullscreen></iframe>      
-      <canvas id="canvas"></canvas>
-      <!-- javascripts animations -->
-      <!-- https://www.coolmathgames.com/0-number-solver -->
-      <!-- ...https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations -->
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title"><p>How to play</p></div>
+        <a class="btn-close" href="{{url_for('index')}}" aria-label="Close"></a>
+      </div>
+      <div class="modal-body">
+        You are randomly given four number cards, each from 1 to 9, with repetitions allowed.<br><br>
+        The objective is to combine all the number cards to equals 24 using:
+        <ul>
+          <li>Addition (+)</li>
+          <li>Subtraction (-)</li>
+          <li>Multiplication (×)</li>
+          <li>Division (÷)</li> 
+        </ul>
+        See demonstration from the video below.<br><br>
+        <iframe width="100%" height="50%" src="https://www.youtube.com/embed/k8gpSRh-sok?&autoplay=1 " title="YouTube video player" frameborder="0" allowfullscreen></iframe>      
+        <canvas id="canvas"></canvas>
+        <!-- javascripts animations -->
+        <!-- https://www.coolmathgames.com/0-number-solver -->
+        <!-- ...https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations -->
+      </div>
     </div>
   </div>
-</div>
-</div>
-<!-- <div id="page-mask"></div> -->
-<!-- <script src="{{url_for('static', filename='javascripts/guide.js')}}"></script> -->
-
-<!-- {% block guide_script %}
-<script src="{{url_for('static', filename='javascripts/guide.js')}}"></script>
-{% endblock %} -->
+  </div>
+  <!-- <div id="page-mask"></div> -->
+  <!-- <script src="{{url_for('static', filename='javascripts/guide.js')}}"></script> -->
+  
+  <!-- {% block guide_script %}
+  <script src="{{url_for('static', filename='javascripts/guide.js')}}"></script>
+  {% endblock %} -->
