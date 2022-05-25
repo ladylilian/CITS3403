@@ -1,6 +1,7 @@
 from crypt import methods
 from email.policy import default
-from flask import Flask, render_template, url_for
+from click import password_option
+from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -22,7 +23,21 @@ def index():
 
 @app.route('/login', methods=['POST','GET'])
 def login():
-    return render_template('login_page.html')
+    if request.method == 'POST':
+        player_uname = request.form['username']
+        player_pword = request.form['password']
+        new_player = Players(username=player_uname, password=player_pword)
+
+        try:
+            db.session.add(new_player)
+            db.session.commit()
+            return redirect('/')
+        except:
+            return 'There was an issue logging in'
+
+    else:
+        players = Players.query.order_by(Players.date_created)
+        return render_template('login_page.html', players=players)
 
 
 if __name__ == "__main__":
