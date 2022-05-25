@@ -188,105 +188,126 @@ var selected_numbers = [];
 var selected_symbols = [];
 var selected_Numids = [];
 var eqution = [];
-// function calculation(){
-//   while (selected_numbers.length < 4 &&selected_symbols.length < 3) {
-//     getNumber(ele);
-//     getSymbol(ele);
-//  };
-// };
 let numberButtons = Array.from(document.getElementsByClassName('number'));
 let symbolButtons = document.querySelectorAll('.symbol');
+function calculation(ClickBtnId){
+  goal = 24;
+  if (document.getElementById(ClickBtnId).value == goal){
+    for(var i = 0; i < numberButtons.length; i++){
+      selected_numbers = []
+      selected_symbols = []
+      selected_Numids = []
+      eqution = []
+      numberButtons[i].style.visibility = "visible";
+      generate_new(); 
+    };
+  }
+ else{
+  alert("ee")
+ };
+};
+
 function getNumber(ele) {
   for(let i = 0; i < symbolButtons.length; i++){
-    symbolButtons[i].disabled = false;
-    numberButtons[i].disabled = true;
+    if (selected_numbers.length == 3){
+      symbolButtons[i].disabled = true;
+    } 
+    else{
+      symbolButtons[i].disabled = false;
     }
+    // numberButtons[i].disabled = true;
+    };
+  if (ele.id == selected_Numids){
+
+
+  }
   selected_Numids.push(ele.id);
-  console.log(selected_Numids);
   var btnNumber = ele.value;
-  var answer = document.getElementById("answer_1");
-  answer.innerText += btnNumber;
+  // var answer = document.getElementById("answer_1");
+  // answer.innerText += btnNumber;
   selected_numbers.push(btnNumber);
   eqution.push(btnNumber);
   console.log(eqution);
   var ans = eval(eqution.join('').toString());
-  // var Clickbtn = ele.id;
-  // buttonAnimation(Clickbtn);
   if (eqution.length == 3) {
     eqution = [];
     eqution.push(ans);
-    // console.log(ele);
     ele.value = ans;
   };
   if (selected_Numids.length == 2) {
     var Clickbtn = selected_Numids;
     buttonAnimation(Clickbtn);
     selected_Numids.shift();
+    var ClickBtnId = selected_Numids;
+  };
+  if (selected_numbers.length == 4) {
+    calculation(ClickBtnId)
   };
 };
 
 function getSymbol(ele) {
   for(let i = 0; i < symbolButtons.length; i++){
     symbolButtons[i].disabled = true;
-    numberButtons[i].disabled = false;
-    }
+    if (selected_Numids.includes(numberButtons[i].id) == true){
+      numberButtons[i].disabled = true;
+    } 
+    // else{
+    // numberButtons[i].disabled = false;
+    // }
+  }
   var btnSymbol = ele.value;
   var answer = document.getElementById("answer_1");
   selected_symbols.push(btnSymbol)
   eqution.push(btnSymbol)
-  answer.innerText += btnSymbol;
+  // answer.innerText += btnSymbol;
   console.log(eqution);
 };
 
 function buttonAnimation(listOftwoClickBtn){
-  console.log(listOftwoClickBtn)
   var id_1 = listOftwoClickBtn[0];
   var id_2 = listOftwoClickBtn[1];
-  console.log(id_1,id_2);
   var id_2xClickBtnPosition = getClickBtnPosition(id_2)[0];
   var id_2yClickBtnPosition = getClickBtnPosition(id_2)[1];
   var id_1xClickBtnPosition = getClickBtnPosition(id_1)[0];
   var id_1yClickBtnPosition = getClickBtnPosition(id_1)[1];
   var relativexPosition =id_2xClickBtnPosition - id_1xClickBtnPosition
   var relativeyPosition =id_2yClickBtnPosition - id_1yClickBtnPosition
-  // console.log(id_2xClickBtnPosition, id_2yClickBtnPosition)
-  console.log(id_2xClickBtnPosition, id_2yClickBtnPosition)
-  console.log(id_1xClickBtnPosition, id_1yClickBtnPosition)
-  console.log(relativexPosition, relativeyPosition)
   var translate3dValue = "translate3d(" + relativexPosition + "px, " + relativeyPosition + "px, 0)";
   document.getElementById(id_1).style.transform = translate3dValue;
-  document.getElementById(id_1).style.visibility = "hidden";
+  $(document).ready(function(){
+      $(document.getElementById(id_1)).animate({opacity: 0});
+  });
   document.getElementById(id_2).focus();
-  //   fadeOut(document.getElementById(id_1))
-
-  // document.getElementById(id_1).style.transition= ".6s ease opacity,.6s ease transform";
+  document.getElementById(id_1).style.transition= ".5s ease transform";
 };
 
 function getClickBtnPosition(Clickbtn) {
-  // console.log(Clickbtn);
   var Numid = document.getElementById(Clickbtn);
-  // const rect = Numid.getBoundingClientRect();
   var position = $(Numid).position();
-  // console.log(Numid)
   var x = position.left;
   var y = position.top;
   return [x,y];
 };
 
-
 // function fadeOut(element) {
-//   var op = 1;  // initial opacity
-//   var timer = setInterval(function () {
-//     if (op <= 0.1){
-//         clearInterval(timer);
-//         element.style.display = 'hidden';
-//     }
-//     element.style.opacity = op;
-//     element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-//     op -= op * 0.1;
-//     element.style.transition
-//   });
+//   var timer = setInterval(hide(element),10);
+//   element.style.visibility = "hidden";
 // }
+
+// function hide(element){
+//   var btn = document.getElementById(element);
+//   var opacity = 0;
+//   opacity = Number(window.getComputedStyle(btn).getPropertyValue("opacity"));
+//   if (opacity > 0){
+//     opacity = opacity - 0.1;
+//     btn.style.opacity = opacity
+//   }
+//   element.style.opacity = op;
+//   element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+//   op -= op * 0.2;
+//   element.style.transition
+//   element.style.zIndex = "-1";
+// };
 // console.log(getClickBtnPosition(n_one)[0]);
 // const resrtButtons = document.querySelectorAll('[reset]')
 // function calculation(){
@@ -312,6 +333,3 @@ function getClickBtnPosition(Clickbtn) {
 window.onload = (event) =>{
   generate_new();
 };
-// (function() {
-//   generate_new();
-// });

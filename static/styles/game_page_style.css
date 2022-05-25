@@ -19,6 +19,7 @@
   border: none;
   border-radius: 4px;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: .3s linear;
 }
 .isolated .btn:hover:enabled{
   transform: translate3d(0, -2px, 0);
@@ -49,50 +50,50 @@
 }
 
  /* n_one */
- #n_one, #n_one:hover:enabled {
+ #n_one {
   color: #fff;
   background-color: #4285F4;
   box-shadow: 3px 3px #0746a4;
 }
 
-#n_one:focus:enabled, #n_one:active:enabled {
+#n_one:hover:enabled, #n_one:focus:enabled, #n_one:active:enabled {
   color: #fff;
   background-color: #0b5ed7;
   box-shadow: 3px 3px #0746a4, 7px 7px 2px rgba(49, 132, 253, 0.5);
 }
 
 /* n_two */
-#n_two, #n_two:hover:enabled {
+#n_two {
   color: #fff;
   background-color: #34A843;
   box-shadow: 3px 3px #1e6027;
 }
 
-#n_two:focus:enabled, #n_two:active:enabled {
+#n_two:hover:enabled, #n_two:focus:enabled, #n_two:active:enabled {
   color: #fff;
   background-color: #198127;
   box-shadow: 3px 3px #1e6027, 7px 7px 2px rgba(60, 153, 110, 0.5);
 }
 
 /* n_three */
-#n_three, #n_three:hover:enabled {
+#n_three{
   color: #fff;
   background-color: #FBBC08;
   box-shadow: 3px 3px #9c7407;
 }
-#n_three:focus:enabled, #n_three:active:enabled {
+#n_three:hover:enabled, #n_three:focus:enabled, #n_three:active:enabled {
   color: #fff;
   background-color: #e0a606;
   box-shadow: 3px 3px #9c7407, 7px 7px 2px rgba(217, 164, 6, 0.5);
 }
 
 /* n_four */
-#n_four, #n_four:hover:enabled {
+#n_four {
   color: #fff;
   background-color: #EA4335;
   box-shadow: 3px 3px #802219;
 }
-#n_four:focus:enabled #n_four:active:enabled {
+#n_four:hover:enabled, #n_four:focus:enabled #n_four:active:enabled {
   color: #fff;
   background-color: #be362a;
   box-shadow: 3px 3px #802219, 7px 7px 2px rgba(225, 83, 97, 0.5);
@@ -117,48 +118,48 @@
 }
 
 /* s_one */
-#s_one, #s_one:hover:enabled {
+#s_one {
   color: #fff;
   background-color: #9ab5e0;
   box-shadow: 3px 3px #637693;
 }
-#s_one:focus:enabled, #s_one:active:enabled {
+#s_one:hover:enabled, #s_one:focus:enabled, #s_one:active:enabled {
   color: #fff;
   background-color: #7da2df;
   box-shadow: 3px 3px #637693, 6px 6px 2px #c2d4f0;
 }
 
 /* s_two */
-#s_two, #s_two:hover:enabled {
+#s_two {
   color: #fff;
   background-color: #b1e3b6;
   box-shadow: 3px 3px #7ba17f;
 }
-#s_two:focus:enabled, #s_two:active:enabled {
+#s_two:hover:enabled, #s_two:focus:enabled, #s_two:active:enabled {
   color: #fff;
   background-color: #87c18d;
   box-shadow: 3px 3px #7ba17f, 6px 6px 2px #baebc0;
 }
   
 /* s_three */
-#s_three, #s_three:hover:enabled {
+#s_three {
   color: #fff;
   background-color: #ebd28c;
   box-shadow: 3px 3px #8a7b52;
 }
-#s_three:focus:enabled, #s_three:active:enabled {
+#s_three:hover:enabled, #s_three:focus:enabled, #s_three:active:enabled {
   color: #fff;
   background-color: #e9c563;
   box-shadow: 3px 3px #8a7b52, 6px 6px 2px #ffe59e;
 }
 
 /* s_four */
-#s_four, #s_four:hover:enabled {
+#s_four {
   color: #fff;
   background-color: #e4ada8;
   box-shadow: 3px 3px #876865;
 }
-#s_four:focus:enabled, #s_four:active:enabled {
+#s_four:hover:enabled, #s_four:focus:enabled, #s_four:active:enabled {
   color: #fff;
   background-color: #cd8079;
   box-shadow: 3px 3px #876865, 6px 6px 2px #ffc3be;
