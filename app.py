@@ -4,6 +4,7 @@ from click import password_option
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+from sqlalchemy import desc
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
@@ -19,7 +20,8 @@ class Players(db.Model):
 
 @app.route('/')
 def index():
-    return render_template('game_page.html')
+    players = Players.query.order_by(desc(Players.max_score))
+    return render_template('game_page.html', players=players)
 
 @app.route('/login', methods=['POST','GET'])
 def login():
@@ -36,7 +38,7 @@ def login():
             return 'There was an issue logging in'
 
     else:
-        players = Players.query.order_by(Players.date_created)
+        players = Players.query.order_by(desc(Players.max_score))
         return render_template('login_page.html', players=players)
 
 
