@@ -1,9 +1,6 @@
-from crypt import methods
-from email.policy import default
-from click import password_option
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
-### from flask_login import LoginManager
+from flask_login import LoginManager
 from datetime import datetime
 from sqlalchemy import desc
 import os
