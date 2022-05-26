@@ -8,8 +8,13 @@
         <a class="btn-close" href="{{url_for('index')}}" aria-label="Close" onclick="toggle_rankButton()"></a>
       </div>
       <div class="rank-body">
-        <div class="current-score"><p>417</p></div> <!-- replace 417 with {{ score }},  get from db -->
+        {% if current_user.is_anonymous %}
+        <div class="current-score"><p> - </p></div> 
+        {% else %}
+        <div class="current-score"><p>{{ current_user.current_score }}</p></div> <!-- replace 417 with {{ score }},  get from db -->
         <div class="global-ranking">
+        {% endif %}
+        </div>
           <table>
             <tr>
               <th>Username</th>
