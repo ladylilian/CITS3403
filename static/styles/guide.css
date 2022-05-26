@@ -78,7 +78,7 @@ html, body {
 .modal-body {
   position: relative;
   padding: 1rem;
-  height: 200px;
+  height: auto ;
 }
 .btn-close {
   box-sizing: content-box;
