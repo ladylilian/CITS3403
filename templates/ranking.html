@@ -1,4 +1,5 @@
 <!-- rank -->
+{% block rank %}
 <div class="rank fade" id="myrank">
   <div class="rank-dialog">
     <div class="rank-content">
@@ -9,8 +10,22 @@
       <div class="rank-body">
         <div class="current-score"><p>417</p></div> <!-- replace 417 with {{ score }},  get from db -->
         <div class="global-ranking">
+          <table>
+            <tr>
+              <th>Username</th>
+              <th>Score</th>
+            </tr>
+          {% for player in players %}
+            <tr>
+              <td>{{ player.username }}</td>
+              <td>{{ player.max_score }}</td>
+             </tr><br>
+            {% endfor %}
+          </table>
+
         </div>
       </div>
     </div>
   </div>
 </div>
+{% endblock %}
