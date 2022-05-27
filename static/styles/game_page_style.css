@@ -1,14 +1,26 @@
 /* all buttons */
 .isolated{
   display: flex;
+  flex-direction: column;
   vertical-align: middle;
   align-items: center;
   justify-content: center;
 }
-.game-board{
-  padding-top: 100px;
+.current_score{
+  display: inline-flex;
+  margin-top: 100px;
+  height: 65px;
+  width: 160px;
+  background-color: #78787e;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 900;
 }
-
+.game-board{
+  padding-top: 20px;
+}
 .isolated .btn{
   border-radius:10px;
   text-align: center;
@@ -93,7 +105,7 @@
   background-color: #EA4335;
   box-shadow: 3px 3px #802219;
 }
-#n_four:hover:enabled, #n_four:focus:enabled #n_four:active:enabled {
+#n_four:hover:enabled, #n_four:focus:enabled, #n_four:active:enabled {
   color: #fff;
   background-color: #be362a;
   box-shadow: 3px 3px #802219, 7px 7px 2px rgba(225, 83, 97, 0.5);

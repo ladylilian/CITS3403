@@ -183,13 +183,19 @@ function removeDuplicates(arr) {
   return out;
 }
 
+
 // Calculate the click buttons
-var selected_numbers = [];
-var selected_symbols = [];
-var selected_Numids = [];
+
+var selected_Symids = [];
 var eqution = [];
+
 let numberButtons = Array.from(document.getElementsByClassName('number'));
 let symbolButtons = document.querySelectorAll('.symbol');
+
+// isOperator checking
+const operators =  ['+', '-', '*', '/'];
+const isOperator = (e) => operators.includes(e);
+
 function calculation(ClickBtnId){
   goal = 24;
   if (document.getElementById(ClickBtnId).value == goal){
@@ -207,61 +213,117 @@ function calculation(ClickBtnId){
  };
 };
 
-function getNumber(ele) {
-  for(let i = 0; i < symbolButtons.length; i++){
-    if (selected_numbers.length == 3){
-      symbolButtons[i].disabled = true;
-    } 
-    else{
-      symbolButtons[i].disabled = false;
+
+
+// getNumber
+$(document).ready(function(){
+  var selected_numbers = document.getElementsByClassName("selectedNum");
+  var selected_Numids = [];
+  var selectedNum = []
+
+  $(".number").toggle(
+    function() {
+      for(let i = 0; i < symbolButtons.length; i++){
+        if (selected_numbers.length == 3){
+          symbolButtons[i].disabled = true;
+        } 
+        else{
+          symbolButtons[i].disabled = false;
+        }
+      };
+      $(this).addClass("selectedNum");
+      $(this).closest('div').find(".number").not(this).removeClass('selectedNum');
+
+      if (typeof eqution[0] !== 'undefined'){
+        if ($.isNumeric(eqution[0]) && (isOperator(eqution[1]) == false)){
+          eqution.pop();
+        };
+      };
+        selected_Numids.push(this.id);
+        selectedNum.push(this.value)
+        eqution.push(this.value);
+        console.log(eqution);
+
+      if (($.isNumeric(eqution[0])) && (isOperator(eqution[1]) == true)) {
+        var ans = eval(eqution.join('').toString());
+        eqution = [];
+        eqution.push(ans);
+        selected_numbers[0].value = ans;
+        var Clickbtn = selected_Numids.slice(-2);
+        buttonAnimation(Clickbtn);
+        console.log(Clickbtn);
+        selected_Numids.shift();
+        var ClickBtnId = selected_Numids;
+        console.log(selectedNum.length);
+        if (selectedNum.length !== 4) {
+          if ($(document.getElementById(selected_Symids[0])).hasClass("selectedSym")){
+            for(let i = 0; i < symbolButtons.length; i++){
+            document.getElementById(selected_Symids[i]).click();
+            };
+          };
+        };
+      };
+      if (this.id !== document.getElementsByClassName("selectedNum")[0].id){
+        for(let i = 0; i < symbolButtons.length; i++){
+        document.getElementById(selected_Numids[i]).click();
+        };
+      };
+      if (selectedNum.length == 4) {
+        calculation(ClickBtnId)
+      };
+      console.log(eqution);
+    }, 
+
+    function() {
+      $(this).removeClass("selectedNum");
+      $(this).blur()
+      for(let i = 0; i < symbolButtons.length; i++){
+        if (selected_numbers.length == 3){
+          symbolButtons[i].disabled = false;
+        } 
+        else{
+          symbolButtons[i].disabled = true;
+        }
+      }
+      //
+      selected_Numids.pop();
+      selectedNum.pop();
+      eqution.pop();
+      console.log(eqution)
     }
-    // numberButtons[i].disabled = true;
-    };
-  if (ele.id == selected_Numids){
+  )
+});
 
 
-  }
-  selected_Numids.push(ele.id);
-  var btnNumber = ele.value;
-  // var answer = document.getElementById("answer_1");
-  // answer.innerText += btnNumber;
-  selected_numbers.push(btnNumber);
-  eqution.push(btnNumber);
-  console.log(eqution);
-  var ans = eval(eqution.join('').toString());
-  if (eqution.length == 3) {
-    eqution = [];
-    eqution.push(ans);
-    ele.value = ans;
-  };
-  if (selected_Numids.length == 2) {
-    var Clickbtn = selected_Numids;
-    buttonAnimation(Clickbtn);
-    selected_Numids.shift();
-    var ClickBtnId = selected_Numids;
-  };
-  if (selected_numbers.length == 4) {
-    calculation(ClickBtnId)
-  };
-};
 
-function getSymbol(ele) {
-  for(let i = 0; i < symbolButtons.length; i++){
-    symbolButtons[i].disabled = true;
-    if (selected_Numids.includes(numberButtons[i].id) == true){
-      numberButtons[i].disabled = true;
-    } 
-    // else{
-    // numberButtons[i].disabled = false;
-    // }
-  }
-  var btnSymbol = ele.value;
-  var answer = document.getElementById("answer_1");
-  selected_symbols.push(btnSymbol)
-  eqution.push(btnSymbol)
-  // answer.innerText += btnSymbol;
-  console.log(eqution);
-};
+// getSymbol
+$(document).ready(function(){
+  $(".symbol").toggle(
+    function() {
+      $(this).addClass("selectedSym");
+      $(this).closest('div').find(".symbol").not(this).removeClass('selectedSym');
+      if (typeof eqution[1] !== 'undefined'){
+        if ((eqution.length == 2) && (isOperator(eqution[1]) == true)){
+          eqution.pop();
+        };
+      };
+      selected_Symids.push(this.id);
+      eqution.push(this.value);
+      console.log(eqution)
+    },
+
+    function() {
+      $(this).removeClass("selectedSym");
+
+      if ((isOperator(eqution[1]) == true) && (eqution[1] !== this.value)) {
+        eqution.pop()
+        eqution.push(this.value)
+      }
+      console.log(eqution)
+    }
+  )
+});
+
 
 function buttonAnimation(listOftwoClickBtn){
   var id_1 = listOftwoClickBtn[0];
@@ -272,8 +334,10 @@ function buttonAnimation(listOftwoClickBtn){
   var id_1yClickBtnPosition = getClickBtnPosition(id_1)[1];
   var relativexPosition =id_2xClickBtnPosition - id_1xClickBtnPosition
   var relativeyPosition =id_2yClickBtnPosition - id_1yClickBtnPosition
+  console.log(id_1, id_2)
   var translate3dValue = "translate3d(" + relativexPosition + "px, " + relativeyPosition + "px, 0)";
   document.getElementById(id_1).style.transform = translate3dValue;
+  document.getElementById(id_1).style.zIndex = -1
   $(document).ready(function(){
       $(document.getElementById(id_1)).animate({opacity: 0});
   });
@@ -289,47 +353,11 @@ function getClickBtnPosition(Clickbtn) {
   return [x,y];
 };
 
-// function fadeOut(element) {
-//   var timer = setInterval(hide(element),10);
-//   element.style.visibility = "hidden";
-// }
-
-// function hide(element){
-//   var btn = document.getElementById(element);
-//   var opacity = 0;
-//   opacity = Number(window.getComputedStyle(btn).getPropertyValue("opacity"));
-//   if (opacity > 0){
-//     opacity = opacity - 0.1;
-//     btn.style.opacity = opacity
-//   }
-//   element.style.opacity = op;
-//   element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-//   op -= op * 0.2;
-//   element.style.transition
-//   element.style.zIndex = "-1";
-// };
-// console.log(getClickBtnPosition(n_one)[0]);
 // const resrtButtons = document.querySelectorAll('[reset]')
-// function calculation(){
-//   while len(selected_numbers) < 4 && len(selected_symbols) < 3 {
-
-//  }
-
-//   var clicked = 0
-//   var j = 0
-//   while i < used_number && j < used_symbol{
-//     if onClick() {
-//       if {
-//         i--
-//       }
-//       i++
-      
-//     }
-//   }
-//   var = document.getElementsByClassName("s_one");
-// }
 
 
-window.onload = (event) =>{
+
+$(document).ready(function(){
   generate_new();
-};
+});
+
