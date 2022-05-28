@@ -21,9 +21,9 @@
               <div class="header">
                 <div class="title">24 game</div>
                 <div class="header-btns">
-                  <a class="btn-help" href="#" onclick="toggle_helpButton()"><i class="fa-regular fa-circle-question fa-lg"></i></a>
+                  <a class="btn-help" href="#" onclick="toggle_helpButton();"><i class="fa-regular fa-circle-question fa-lg"></i></a>
                   <a class="btn-share" href="https://www.facebook.com/sharer/sharer.php?u=https://www.w3schools.com/jquery/jquery_get_started.asp" target="_blank"><i class="fa-solid fa-share-nodes fa-lg"></i></a>
-                  <a class="btn-rank" href="#" onclick="toggle_rankButton()"><i class="fa-solid fa-ranking-star fa-lg"></i></a>
+                  <a class="btn-rank" href="#" onclick="toggle_rankButton();"><i class="fa-solid fa-ranking-star fa-lg"></i></a>
                 </div>
               </div>
     </header>
@@ -39,14 +39,18 @@
 <div id="guide">{% include "guide.html" %}</div>
 <!-- Rank -->
 <div id="rank">{% include "ranking.html" %}</div>
+<!-- Rank -->
+<div id="clear_stage">{% include "ranking.html" %}</div>
   <script>
     function toggle_helpButton(){
+      event.preventDefault();
       var blur = document.getElementById('blur');
       blur.classList.toggle('active');
       var myModal = document.getElementById('myModal');
       myModal.classList.toggle('active');
     };
     function toggle_rankButton(){
+      event.preventDefault();
       var blur = document.getElementById('blur');
       blur.classList.toggle('active');
       var myrank = document.getElementById('myrank');

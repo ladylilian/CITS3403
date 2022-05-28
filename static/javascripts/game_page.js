@@ -199,27 +199,32 @@ const isOperator = (e) => operators.includes(e);
 function calculation(ClickBtnId){
   goal = 24;
   if (document.getElementById(ClickBtnId).value == goal){
-    for(var i = 0; i < numberButtons.length; i++){
-      selected_numbers = []
-      selected_symbols = []
-      selected_Numids = []
-      eqution = []
-      numberButtons[i].style.visibility = "visible";
-      generate_new(); 
-    };
+    // for(var i = 0; i < numberButtons.length; i++){
+    //   selected_numbers = []
+    //   selected_symbols = []
+    //   selected_Numids = []
+    //   eqution = []
+    //   numberButtons[i].style.visibility = "visible";
+    //   generate_new(); 
+    // };
+    load_clear_stage()
   }
  else{
   alert("ee")
  };
 };
 
+function load_clear_stage() {
+  document.getElementById("isolated").innerHTML='<object type="text/html" data="clear_stage.html"></object>';
+}
 
 
 // getNumber
 $(document).ready(function(){
   var selected_numbers = document.getElementsByClassName("selectedNum");
+  var used_numbers = document.getElementsByClassName("invisible");
   var selected_Numids = [];
-  var selectedNum = []
+  var selectedNums = []
 
   $(".number").toggle(
     function() {
@@ -234,15 +239,15 @@ $(document).ready(function(){
       $(this).addClass("selectedNum");
       $(this).closest('div').find(".number").not(this).removeClass('selectedNum');
 
+      // prevent players adding a number right after the first one into eqution, ex: 2,3
       if (typeof eqution[0] !== 'undefined'){
         if ($.isNumeric(eqution[0]) && (isOperator(eqution[1]) == false)){
           eqution.pop();
         };
       };
         selected_Numids.push(this.id);
-        selectedNum.push(this.value)
+        selectedNums.push(this.value)
         eqution.push(this.value);
-        console.log(eqution);
 
       if (($.isNumeric(eqution[0])) && (isOperator(eqution[1]) == true)) {
         var ans = eval(eqution.join('').toString());
@@ -250,25 +255,26 @@ $(document).ready(function(){
         eqution.push(ans);
         selected_numbers[0].value = ans;
         var Clickbtn = selected_Numids.slice(-2);
+        console.log(Clickbtn)
         buttonAnimation(Clickbtn);
-        console.log(Clickbtn);
+        $(document.getElementById(Clickbtn[0])).addClass('invisible');
+        console.log(used_numbers);
         selected_Numids.shift();
         var ClickBtnId = selected_Numids;
-        console.log(selectedNum.length);
-        if (selectedNum.length !== 4) {
-          if ($(document.getElementById(selected_Symids[0])).hasClass("selectedSym")){
-            for(let i = 0; i < symbolButtons.length; i++){
-            document.getElementById(selected_Symids[i]).click();
+        console.log(used_numbers.length);
+        if (used_numbers.length <= 3) {
+          for(let i = 0; i < symbolButtons.length; i++){
+            if ($(document.getElementById(selected_Symids[i])).hasClass("selectedSym")){
+                document.getElementById(selected_Symids[i]).click();
             };
           };
+          if (this.id !== document.getElementsByClassName("selectedNum")[0].id){
+            var resumeClickBtn = document.getElementsByName("selectedNum")
+            resumeClickBtn.click();
+          };  
         };
       };
-      if (this.id !== document.getElementsByClassName("selectedNum")[0].id){
-        for(let i = 0; i < symbolButtons.length; i++){
-        document.getElementById(selected_Numids[i]).click();
-        };
-      };
-      if (selectedNum.length == 4) {
+      if (used_numbers.length == 3) {
         calculation(ClickBtnId)
       };
       console.log(eqution);
@@ -287,7 +293,7 @@ $(document).ready(function(){
       }
       //
       selected_Numids.pop();
-      selectedNum.pop();
+      selectedNums.pop();
       eqution.pop();
       console.log(eqution)
     }
@@ -304,11 +310,14 @@ $(document).ready(function(){
       $(this).closest('div').find(".symbol").not(this).removeClass('selectedSym');
       if (typeof eqution[1] !== 'undefined'){
         if ((eqution.length == 2) && (isOperator(eqution[1]) == true)){
-          eqution.pop();
+          if ((used_numbers.length <= 2)){
+            eqution.pop();
+          }
         };
       };
       selected_Symids.push(this.id);
       eqution.push(this.value);
+      // console.log(used_numbers)
       console.log(eqution)
     },
 
@@ -334,7 +343,6 @@ function buttonAnimation(listOftwoClickBtn){
   var id_1yClickBtnPosition = getClickBtnPosition(id_1)[1];
   var relativexPosition =id_2xClickBtnPosition - id_1xClickBtnPosition
   var relativeyPosition =id_2yClickBtnPosition - id_1yClickBtnPosition
-  console.log(id_1, id_2)
   var translate3dValue = "translate3d(" + relativexPosition + "px, " + relativeyPosition + "px, 0)";
   document.getElementById(id_1).style.transform = translate3dValue;
   document.getElementById(id_1).style.zIndex = -1

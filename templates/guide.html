@@ -5,7 +5,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <div class="modal-title"><p>How to play</p></div>
-        <a class="btn-close" href="{{url_for('index')}}" aria-label="Close"></a>
+        <a class="btn-close" href="{{url_for('index')}}" aria-label="Close" onclick="toggle_helpButton()"></a>
       </div>
       <div class="modal-body">
         You are randomly given four number cards, each from 1 to 9, with repetitions allowed.<br><br>
@@ -26,9 +26,3 @@
     </div>
   </div>
   </div>
-  <!-- <div id="page-mask"></div> -->
-  <!-- <script src="{{url_for('static', filename='javascripts/guide.js')}}"></script> -->
-  
-  <!-- {% block guide_script %}
-  <script src="{{url_for('static', filename='javascripts/guide.js')}}"></script>
-  {% endblock %} -->
