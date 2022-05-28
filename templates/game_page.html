@@ -2,7 +2,13 @@
 
 {% block game_board %}
 <div class="isolated"> <!-- id="page_mask" -->
-  <div class="current_score"></div>
+  <div class="current_score">
+    {% if current_user.is_anonymous %}
+    <p> - </p>
+    {% else %}
+    <p>{{ current_user.current_score }}</p>
+    {% endif %}
+  </div>
   <div class="game-board"> <!--onclick="showCoords(event)"-->
     <span class="number_container">
       <input type="button" class="number btn" id="n_one" ontoggle="getNumber(this)">

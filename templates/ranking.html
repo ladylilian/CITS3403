@@ -4,30 +4,31 @@
   <div class="rank-dialog">
     <div class="rank-content">
       <div class="rank-header">
-        <div class="rank-title"><p>Rank</p></div>
+        <div class="rank-title"><p>Ranking</p></div>
         <a class="btn-close" href="{{url_for('index')}}" aria-label="Close" onclick="toggle_rankButton()"></a>
       </div>
       <div class="rank-body">
+        <div>
         {% if current_user.is_anonymous %}
-        <div class="current-score"><p> - </p></div> 
+          <div class="current-score"><p> - </p></div> 
         {% else %}
-        <div class="current-score"><p>{{ current_user.current_score }}</p></div> <!-- replace 417 with {{ score }},  get from db -->
-        <div class="global-ranking">
+          <h3>Your Personal Record</h3>
+          <div class="current-score"><p>{{ current_user.max_score }}</p></div>
         {% endif %}
-        </div>
+        <div>
           <table>
             <tr>
               <th>Username</th>
               <th>Score</th>
             </tr>
-            {% for player in players %}
+            <br>
+            {% for player in players[:9] %}
             <tr>
               <td>{{ player.username }}</td>
               <td>{{ player.max_score }}</td>
-             </tr><br>
+             </tr>
             {% endfor %}
           </table>
-
         </div>
       </div>
     </div>
