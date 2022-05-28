@@ -11,9 +11,12 @@
         {% if current_user.is_anonymous %}
         <div class="current-score"><p> - </p></div> 
         {% else %}
-        <div class="current-score"><p>{{ current_user.current_score }}</p></div> <!-- replace 417 with {{ score }},  get from db -->
-        <div class="global-ranking">
+        <p>Your Personal Record</p><br>
+        <div class="current-score">
+          <p>{{ current_user.max_score }}</p>
+        </div> <!-- replace 417 with {{ score }},  get from db -->
         {% endif %}
+        <div class="global-ranking">
         </div>
           <table>
             <tr>
