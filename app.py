@@ -55,11 +55,15 @@ class LoginForm(FlaskForm):
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
-        hashed_pw = generate_password_hash(form.password1.data)
-        player = Players(username =form.username.data, password_hash=hashed_pw)
-        db.session.add(player)
-        db.session.commit()
-        return redirect(url_for('login'))
+        check_username = Players.query.filter_by(username = form.username.data).first()
+        if check_username is None:
+            hashed_pw = generate_password_hash(form.password1.data)
+            player = Players(username =form.username.data, password_hash=hashed_pw)
+            db.session.add(player)
+            db.session.commit()
+            return redirect(url_for('login'))
+        else:
+            flash("That username is already taken, please try a different one.")
     players = Players.query.order_by(desc(Players.max_score))
     return render_template('register_page.html', form=form, players=players)
 

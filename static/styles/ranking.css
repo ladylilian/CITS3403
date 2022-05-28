@@ -74,17 +74,25 @@ html, body {
   height: 500px;
   justify-content: center;
 }
+
 .current-score{
-  display: flex;
-  height: 70px;
-  width: 50%;
+  display: inline-flex;
+  height: 65px;
+  width: 160px;
   background-color: #78787e;
   border-radius: 10px;
   align-items: center;
   justify-content: center;
   font-size: 30px;
   font-weight: 900;
+  color: white;
 }
+
+.container{
+  position: relative;
+  height: 200px;
+}
+
 .btn-close {
   box-sizing: content-box;
   width: 1em;
@@ -103,4 +111,13 @@ html, body {
 .btn-close:focus {
   outline: 0;
   opacity: 1;
+}
+
+table{
+  width: 100%;
+}
+
+th, td {
+  height: 30px;
+  text-align: left;
 }
