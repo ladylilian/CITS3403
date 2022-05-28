@@ -2,12 +2,16 @@
 
 {% block game_board %}
 <div class="isolated"> <!-- id="page_mask" -->
-  <div class="current_score">
-    {% if current_user.is_anonymous %}
-    <p> - </p>
-    {% else %}
-    <p>{{ current_user.current_score }}</p>
-    {% endif %}
+  <div class="game_top">
+    <div class="current_score">
+      {% if current_user.is_anonymous %}
+      <p> - </p>
+      {% else %}
+      <p>{{ current_user.current_score }}</p>
+      {% endif %}
+    </div>
+    <!-- reset button -->
+    <a class="btn-rank" href="#" onclick="reset()"><i class="fa-solid fa-arrows-rotate" id="resetBtn"></i></a>
   </div>
   <div class="game-board"> <!--onclick="showCoords(event)"-->
     <span class="number_container">
