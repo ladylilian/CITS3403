@@ -1,28 +1,28 @@
 {% extends "header.html" %}
 
 {% block game_board %}
-<div class="isolated" id="page_mask"> <!-- id="page_mask" -->
+<div class="isolated" id="page_mask">
   <div class="game_top">
     <div class="current_score">
       {% if current_user.is_anonymous %}
       <p> - </p>
       {% else %}
-      <p>{{ current_user.current_score }}</p>
+      <p id="current_score">0</p> <!--  {{ current_user.current_score }} -->
       {% endif %}
     </div>
     <!-- reset button -->
-    <a class="btn-rank" href="#" onclick="reset()"><i class="fa-solid fa-arrows-rotate" id="resetBtn"></i></a>
+    <a class="reset" href="#" onclick="reset()"><i class="fa-solid fa-arrows-rotate" id="resetBtn"></i></a>
     <!-- give up button -->
-    <a class="btn-rank" href="#" onclick="reset()"><i class="fa-solid fa-rectangle-xmark" id="give_upBtn"></i></a>
+    <a class="give-up" href="#"><i class="fa-solid fa-rectangle-xmark" id="give_upBtn"></i></a>
   </div>
   <div class="game-board"> <!--onclick="showCoords(event)"-->
     <span class="number_container">
-      <input type="button" class="number btn" id="n_one" ontoggle="getNumber(this)">
-      <input type="button" class="number btn" id="n_two" ontoggle="getNumber(this)">
+      <input type="button" class="number btn" id="n_one" style="" ontoggle="getNumber(this)">
+      <input type="button" class="number btn" id="n_two" style="" ontoggle="getNumber(this)">
     </span>
     <span class="number_container">
-      <input type="button" class="number btn" id="n_three" ontoggle="getNumber(this)">
-      <input type="button" class="number btn" id="n_four" ontoggle="getNumber(this)">
+      <input type="button" class="number btn" id="n_three" style="" ontoggle="getNumber(this)">
+      <input type="button" class="number btn" id="n_four" style="" ontoggle="getNumber(this)">
     </span>
     <div class="symbol_container">
       <input type="button" class="btn symbol" id="s_one" value="+" disabled ontoggle="getSymbol(this)">
@@ -43,6 +43,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script>
   function clearStageShow(){
+    event.preventDefault();
     var blur = document.getElementById('page_mask');
     blur.classList.toggle('active');
     var clearStageOpener = document.getElementById('clearStage');

@@ -183,9 +183,7 @@ function removeDuplicates(arr) {
   return out;
 }
 
-
 // Calculate the click buttons
-
 var selected_Symids = [];
 var eqution = [];
 
@@ -198,31 +196,42 @@ const isOperator = (e) => operators.includes(e);
 
 function calculation(ClickBtnId){
   goal = 24;
+  var score = document.getElementById('current_score').innerText;
+  let counter = document.getElementById('stageCounter');
+  console.log(score);
   if (document.getElementById(ClickBtnId).value == goal){
-    // for(var i = 0; i < numberButtons.length; i++){
-    //   selected_numbers = []
-    //   selected_symbols = []
-    //   selected_Numids = []
-    //   eqution = []
-    //   numberButtons[i].style.visibility = "visible";
-    //   generate_new(); 
-    // };
     document.getElementById("clear_stage_opener").click();
+    counter.addEventListener("click",()=>{
+      score = parseInt(score) + 100;
+      document.getElementById('current_score').innerText = score;
+    });
+    selected_numbers = []
+    selected_symbols = []
+    selected_Numids = []
+    eqution = []
+    for(var i = 0; i < numberButtons.length; i++){
+      numberButtons[i].click();
+      if ($(numberButtons[i]).hasClass('invisible')){
+      $(numberButtons[i]).removeClass('invisible');
+      };
+      if ($(numberButtons[i]).hasClass('selectedNum')){
+        $(numberButtons[i]).removeClass('selectedNum');
+      };
+      numberButtons[i].removeAttribute('style');
+      generate_new(); 
+    };
   }
  else{
   alert("ee")
  };
 };
 
-
-
-// getNumber
+var used_numbers = document.getElementsByClassName("invisible");
 $(document).ready(function(){
   var selected_numbers = document.getElementsByClassName("selectedNum");
-  var used_numbers = document.getElementsByClassName("invisible");
+  // var used_numbers = document.getElementsByClassName("invisible");
   var selected_Numids = [];
   var selectedNums = []
-
   $(".number").toggle(
     function() {
       for(let i = 0; i < symbolButtons.length; i++){
@@ -265,10 +274,11 @@ $(document).ready(function(){
                 document.getElementById(selected_Symids[i]).click();
             };
           };
-          if (this.id !== document.getElementsByClassName("selectedNum")[0].id){
-            var resumeClickBtn = document.getElementsByName("selectedNum")
-            resumeClickBtn.click();
-          };  
+          // if (this.id !== document.getElementsByClassName("selectedNum")[0].id){
+          //   var click_id = document.getElementsByClassName("selectedNum")[0].id
+          //   var resumeClickBtn = document.getElementById(click_id)
+          //   resumeClickBtn.click();
+          // };  
         };
       };
       if (used_numbers.length == 3) {
@@ -288,7 +298,6 @@ $(document).ready(function(){
           symbolButtons[i].disabled = true;
         }
       }
-      //
       selected_Numids.pop();
       selectedNums.pop();
       eqution.pop();
@@ -322,13 +331,14 @@ $(document).ready(function(){
       $(this).removeClass("selectedSym");
 
       if ((isOperator(eqution[1]) == true) && (eqution[1] !== this.value)) {
+
         eqution.pop()
         eqution.push(this.value)
       }
       console.log(eqution)
     }
   )
-});
+}); 
 
 
 function buttonAnimation(listOftwoClickBtn){
@@ -344,7 +354,10 @@ function buttonAnimation(listOftwoClickBtn){
   document.getElementById(id_1).style.transform = translate3dValue;
   document.getElementById(id_1).style.zIndex = -1
   $(document).ready(function(){
+    console.log(used_numbers.length);
+    if (used_numbers.length < 2){
       $(document.getElementById(id_1)).animate({opacity: 0});
+    };
   });
   document.getElementById(id_2).focus();
   document.getElementById(id_1).style.transition= ".5s ease transform";
