@@ -374,13 +374,33 @@ function getClickBtnPosition(Clickbtn) {
 
 // const resrtButtons = document.querySelectorAll('[reset]')
 
+var numbers = []
 function reset(){
   // event.preventDefault();
-  var numbers = generate_new();
+  selected_numbers = []
+  selected_symbols = []
+  selected_Numids = []
+  eqution = []
+  $(document.getElementById('resetBtn')).removeClass('fa-spin');
+  for(var i = 0; i < numberButtons.length; i++){
+    numberButtons[i].click();
+    if ($(numberButtons[i]).hasClass('invisible')){
+    $(numberButtons[i]).removeClass('invisible');
+    };
+    if ($(numberButtons[i]).hasClass('selectedNum')){
+      $(numberButtons[i]).removeClass('selectedNum');
+    };
+    numberButtons[i].removeAttribute('style');
+  };
+  var n_html = document.getElementsByClassName("number");
+  for (var i = 0; i < n_html.length; i++) {
+    n_html[i].value = numbers[i]
+  };
 };
   
 
 $(document).ready(function(){
-  generate_new();
+  numbers = generate_new();
+  console.log(numbers);
 });
 
