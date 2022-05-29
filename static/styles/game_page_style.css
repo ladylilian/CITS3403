@@ -6,14 +6,19 @@
   align-items: center;
   justify-content: center;
 }
+.isolated#page_mask.active{
+  display: none;
+  pointer-events: none;
+  user-select: none;
+}
 .game_top{
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: baseline;
   position: relative
 }
 .current_score{
-  /* display: inline-flex; */
+  display: inline-flex;
   margin-top: 100px;
   height: 65px;
   width: 160px;
@@ -26,10 +31,19 @@
   color: white;
 }
 #resetBtn{
-  font-size: 20px;
+  font-size: 25px;
   color: #9d9da9;
   position: absolute;
-  left: 220px;
+  left: 190px;
+}
+#give_upBtn{
+  font-size: 25px;
+  color: #9d9da9;
+  position: absolute;
+  left: 230px;
+}
+#give_upBtn:hover{
+  color: #e87575;
 }
 .game-board{
   padding-top: 20px;
@@ -190,8 +204,7 @@
   box-shadow: 3px 3px #876865, 6px 6px 2px #ffc3be;
 }
 
-/* .isolated #page_mask .active{
-  filter: opacity(50%);
-  pointer-events: none;
-  user-select: none;
-} */
+#clear_stage_opener{
+  visibility: hidden;
+  opacity: 0;
+}
