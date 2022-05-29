@@ -13,6 +13,7 @@ function generate_new() {
   }
   // clear answer div
   // document.getElementById('answer').innerHTML = ""
+  return numbers;
 }
 
 // function clear_numbers() {
@@ -222,7 +223,7 @@ function calculation(ClickBtnId){
     };
   }
  else{
-  alert("ee")
+   $(document.getElementById('resetBtn')).addClass('fa-spin')
  };
 };
 
@@ -373,7 +374,11 @@ function getClickBtnPosition(Clickbtn) {
 
 // const resrtButtons = document.querySelectorAll('[reset]')
 
-
+function reset(){
+  // event.preventDefault();
+  var numbers = generate_new();
+};
+  
 
 $(document).ready(function(){
   generate_new();
