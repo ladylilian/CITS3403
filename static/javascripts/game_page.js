@@ -207,16 +207,13 @@ function calculation(ClickBtnId){
     //   numberButtons[i].style.visibility = "visible";
     //   generate_new(); 
     // };
-    load_clear_stage()
+    document.getElementById("clear_stage_opener").click();
   }
  else{
   alert("ee")
  };
 };
 
-function load_clear_stage() {
-  document.getElementById("isolated").innerHTML='<object type="text/html" data="clear_stage.html"></object>';
-}
 
 
 // getNumber
