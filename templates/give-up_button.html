@@ -1,0 +1,19 @@
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/give_up_button.css') }}">
+<!-- give-up button -->
+<div class="give_up fade" id="mygive_up">
+    <div class="give_up-dialog">
+      <div class="give_up-content">
+        <div class="give_up-header">
+          <div class="give_up-title"><p>Give Up &#10071;&#10067;</p></div>
+          <a class="btn-close" href="{{url_for('index')}}" aria-label="Close" onclick="toggle_give_upButton()"></a>
+        </div>
+        <div class="give_up-body">
+            <p>If you click yes, you will lose your current score.</p>
+            <div id="answer">answer:</div>
+            <button type="button" class="btn btn-primary" id='give_upYes' href="{{url_for('index')}}" onclick="giveUpShowAns()">Yes</button>
+            <!-- <a type="button" class="btn" id='give_upYes' href="{{url_for('index')}}" onclick="giveUpShowAns()">Yes</a>  -->
+        </div>
+      </div>
+    </div>
+</div>
+  

@@ -372,8 +372,7 @@ function getClickBtnPosition(Clickbtn) {
   return [x,y];
 };
 
-// const resrtButtons = document.querySelectorAll('[reset]')
-
+// Reset the game
 var numbers = []
 function reset(){
   // event.preventDefault();
@@ -397,8 +396,14 @@ function reset(){
     n_html[i].value = numbers[i]
   };
 };
-  
+ 
+// Give up button and show the answer
+function giveUpShowAns(){
+  const ans = solve(numbers, 24);
+  document.getElementById('answer').innerHTML = ans;
+}
 
+// Generate four numbers when the window is loaded
 $(document).ready(function(){
   numbers = generate_new();
   console.log(numbers);
