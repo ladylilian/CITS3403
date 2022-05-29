@@ -205,6 +205,6 @@
 }
 
 #clear_stage_opener{
-  visibility: hidden;
+  display: none;
   opacity: 0;
 }
