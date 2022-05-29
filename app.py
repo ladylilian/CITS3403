@@ -1,6 +1,7 @@
 from datetime import datetime
+from unittest import result
 from click import confirm
-from flask import Flask, render_template, url_for, request, redirect, flash
+from flask import Flask, jsonify, render_template, url_for, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, current_user
 from flask_wtf import FlaskForm
@@ -75,6 +76,8 @@ def login():
         player = Players.query.filter_by(username = form.username.data).first()
         if player is not None and check_password_hash(player.password_hash, form.password.data):
             login_user(player)
+            player.current_score = 0
+            db.session.commit()
             next = request.args.get("next")
             return redirect('game')
         flash('Invalid username or password.')
@@ -83,6 +86,10 @@ def login():
 
 @app.route('/game')
 def index():
+    player = Players.query.filter_by(username=current_user.username).first()
+    if player.current_score > player.max_score:
+        player.max_score = player.current_score
+        db.session.commit()
     players = Players.query.order_by(desc(Players.max_score))
     return render_template('game_page.html', players=players)
 

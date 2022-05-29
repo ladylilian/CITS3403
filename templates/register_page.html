@@ -4,12 +4,12 @@
 
 {% block register %}
 <div id="padding">
-   <h1>Register</h1>
-   <form action="" method="post">
+   <h1 style="text-align: center">Register</h1>
+   <form action="" method="post" style="text-align: center">
       {{ form.hidden_tag() }}
       <div>
          {{ form.username(placeholder="username",
-         style='width: 50%;
+         style='width: 300px;
          font-weight: bold;
          padding: 12px 20px ;
          margin: 8px 0;
@@ -23,7 +23,7 @@
       <br>
       <div>
          {{ form.password1(placeholder="password",
-         style='width: 50%;
+         style='width: 300px;
          font-weight: bold;
          padding: 12px 20px ;
          margin: 8px 0;
@@ -36,8 +36,8 @@
       </div>
       <br>
       <div>
-         {{ form.password2(placeholder="Confirm password",
-         style='width: 50%;
+         {{ form.password2(placeholder="confirm password",
+         style='width: 300px;
          font-weight: bold;
          padding: 12px 20px ;
          margin: 8px 0;
@@ -50,9 +50,9 @@
       </div>
       <br>
       <div>{{ form.submit(
-         style ='background-color: #4CAF50;
+         style ='background-color: #34A843;
          color: white;
-         width: 50%;
+         width: 300px;
          padding: 14px 20px;
          margin: 8px 0;
          border: none;
@@ -60,10 +60,10 @@
       </div>
    </form>
    <p></p>
-   <h3 style = "color: blue; margin-left:100px;"><a href="{{ url_for('login') }}">Already have an account?</a></h3>
+   <h4 style = "color: #4285F4; text-align: center"><a href="{{ url_for('login') }}">Already have an account?</a></h3>
 </div>
 {% for message in get_flashed_messages() %}
-<p style="color: red;">Error : {{ message }}</p>
+<p style="color: #EA4335; text-align: center;">Error : {{ message }}</p>
 {% endfor %}
 {% endblock %}
 </body>
