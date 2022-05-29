@@ -3,7 +3,7 @@ from unittest import result
 from click import confirm
 from flask import Flask, jsonify, render_template, url_for, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager, UserMixin, login_user, current_user
+from flask_login import LoginManager, UserMixin, login_required, login_user, current_user
 from flask_wtf import FlaskForm
 from sqlalchemy import desc
 from wtforms import StringField,PasswordField,SubmitField,BooleanField
@@ -86,6 +86,8 @@ def login():
 
 @app.route('/game')
 def index():
+    if not current_user.is_authenticated:
+        return redirect(url_for('login'))
     player = Players.query.filter_by(username=current_user.username).first()
     if player.current_score > player.max_score:
         player.max_score = player.current_score
