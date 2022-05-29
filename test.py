@@ -1,4 +1,3 @@
-from curses import use_default_colors
 import unittest, os, time
 from app import Players, app, db
 from selenium import webdriver
@@ -13,26 +12,25 @@ class SystemTest(unittest.TestCase):
             self.skipTest('Web browser not available.')
 
         else:
-            db.init_app(app)
+            basedir = os.path.abspath(os.path.dirname(__file__))
+            app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'players.db')
+            self.app = app.test_client()
             db.create_all()
-            p1 = Players(username="test1", password_hash="123")
-            p2 = Players(username="test2", password_hash="234")
-            db.session.add(p1)
-            db.session.add(p2)
+            test = Players(id=000000, username="test", password_hash="123", max_score=1000)
+            db.session.add(test)
             db.session.commit()
-            self.driver.maximize_window()
-            self.driver.get()
 
     def tearDown(self):
-        if self.driver:
-            self.driver.close()
-            db.session.query(Players).delete()
-            db.session.commit()
-            db.session.remove()
+        self.driver.close()
+        db.session.query(Players).delete()
+        db.session.commit()
+        db.session.remove()
 
     def test_register(self):
-        s = Players.query.filter_by(id=1).first
-        self.assertEqual(s.username, 'test1', msg='player exists in db')
+        player = Players.query.get(000000)
+        self.assertEqual(player.username, 'test', msg='username did not match')
+        self.assertEqual(player.password_hash, '123', msg='password did not match')
+
     
 if __name__ == '__main__':
-    unittest.main(verbosity=2)
+    unittest.main()
