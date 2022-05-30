@@ -1,0 +1,496 @@
+commit 71063cf234bb1ab9deb18f6836a3c0b681a554d8
+Author: ladylilian <f22542727@gmail.com>
+Date:   Mon May 30 10:39:17 2022 +0800
+
+    uadate give-up button
+
+commit fb3cc3c826b159a12713d2cb727b179c1caf4f10
+Author: ladylilian <f22542727@gmail.com>
+Date:   Mon May 30 10:09:06 2022 +0800
+
+    testing
+
+commit 5b7be469d630d1745eed65bf2be3067080bc6191
+Author: ladylilian <f22542727@gmail.com>
+Date:   Mon May 30 02:54:44 2022 +0800
+
+    fix game buttons, few works left for give-up button.
+
+commit 45b1f51789d8b3360862ea2d4368c8b615a75db1
+Author: ladylilian <f22542727@gmail.com>
+Date:   Sun May 29 23:22:24 2022 +0800
+
+    update give-up button
+
+commit 63ae53d7d735fe721cefa2876308e57abbf823b2
+Author: ladylilian <f22542727@gmail.com>
+Date:   Sun May 29 21:59:14 2022 +0800
+
+    add reset button
+
+commit 0b28ba6cf1df2dd7fed26b62a3b3ffd986a3a624
+Merge: 21135d8 c17af50
+Author: ladylilian <f22542727@gmail.com>
+Date:   Sun May 29 21:23:10 2022 +0800
+
+    Merge branch 'main' of https://github.com/ladylilian/CITS3403 into game/resetButton
+
+commit c17af504e53996ce4899e456bc8adbfb024491f4
+Merge: 32ab796 b525d58
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Sun May 29 21:21:16 2022 +0800
+
+    Merge pull request #31 from ladylilian/testing
+    
+    Testing
+
+commit b525d58300205a222b830e3ff02e65741195cc04
+Merge: a57f49c 32ab796
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Sun May 29 21:20:21 2022 +0800
+
+    Merge pull request #32 from ladylilian/main
+    
+    ok
+
+commit a57f49cced431b134d034d81ad4a38ed8a88cfe7
+Author: jordansylee <jordansylee@gmail.com>
+Date:   Sun May 29 21:16:55 2022 +0800
+
+    testing
+
+commit 21135d826fd33d4704ee6b348f3fa8692c6fa6a5
+Author: ladylilian <f22542727@gmail.com>
+Date:   Sun May 29 21:10:15 2022 +0800
+
+    test
+
+commit 32ab796d30c80dfa6be0764553622f141be63e00
+Merge: 8bbb633 d7bc8d3
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Sun May 29 20:31:24 2022 +0800
+
+    Merge pull request #30 from ladylilian/game/update-score
+    
+    score + 100 when players win the game (make to 24)
+
+commit d7bc8d32233d1adcab68d2716d113c20c9e99d11
+Author: ladylilian <f22542727@gmail.com>
+Date:   Sun May 29 20:24:20 2022 +0800
+
+    score + 100 when players win the game (make to 24)
+
+commit e38c1cabd40e00b8b0a2bd4ebc7c28ae40af7398
+Merge: b82fc3f 8bbb633
+Author: jordansylee <jordansylee@gmail.com>
+Date:   Sun May 29 13:33:54 2022 +0800
+
+    Merge branch 'main' of https://github.com/ladylilian/CITS3403 into main
+
+commit 8bbb6330d16e98c4bb7f73469dc321054639e962
+Author: ladylilian <f22542727@gmail.com>
+Date:   Sun May 29 13:21:52 2022 +0800
+
+    adding requirements.txt
+
+commit b82fc3f18948838d359e06b3be0ef99aa785c987
+Author: jordansylee <jordansylee@gmail.com>
+Date:   Sun May 29 13:17:15 2022 +0800
+
+    Create requirements.txt
+
+commit 49a80bbe569d49bf28dfbfb8b4698f90c16ac6c7
+Merge: 0b6aa8f e5beb3f
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Sun May 29 13:00:48 2022 +0800
+
+    Merge pull request #29 from ladylilian/game/resetBtn
+    
+    adding resrt and give-up buttons
+
+commit 0b6aa8fc20b351e04d608d5265785af83cabeb71
+Merge: dc85266 d70fa1f
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Sun May 29 12:55:59 2022 +0800
+
+    Merge pull request #27 from ladylilian/login-register-css
+    
+    Completed Login & Register pages' css
+
+commit e5beb3f4082527327710f583fb4937374a22efe7
+Author: ladylilian <f22542727@gmail.com>
+Date:   Sun May 29 12:55:17 2022 +0800
+
+    adding resrt and give-up buttons
+
+commit d70fa1fbbf86f390ff0edbcf9c29d673937b45a6
+Author: jordansylee <jordansylee@gmail.com>
+Date:   Sun May 29 12:54:14 2022 +0800
+
+    Update DB
+    
+    1. repalce max if current is higher
+    2. when user re-login, current set to 0
+
+commit 27e944527b6ca961c86968a4eaea365893dc377b
+Author: jordansylee <jordansylee@gmail.com>
+Date:   Sun May 29 11:22:06 2022 +0800
+
+    Completed Login & Register pages' css
+
+commit dc852660730edb7b8baa55e349be113cff9a4d90
+Merge: d531611 34861fb
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Sun May 29 01:53:56 2022 +0800
+
+    Merge pull request #26 from ladylilian/header-fixbuttons
+    
+    Header fixbuttons, fix close button refresh game page
+
+commit 34861fbd90ca7519bcad56e57da4a061beddd4da
+Author: ladylilian <f22542727@gmail.com>
+Date:   Sun May 29 01:52:40 2022 +0800
+
+    Fix closing button refresh game page
+
+commit 12a6f3b1688167b01b36cceb6092be6f665c207f
+Merge: bb353f7 d531611
+Author: ladylilian <f22542727@gmail.com>
+Date:   Sun May 29 01:38:39 2022 +0800
+
+    Merge branch 'main' of https://github.com/ladylilian/CITS3403 into header-buttons
+
+commit bb353f719651d9f64fea4af7144c0b07d86a85e3
+Author: ladylilian <f22542727@gmail.com>
+Date:   Sun May 29 01:25:36 2022 +0800
+
+    closes #22
+
+commit d5316116963b74ddfd3d294d427c4010fe226ca0
+Merge: 7925f22 1a8bc97
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Sat May 28 22:19:52 2022 +0800
+
+    Merge pull request #24 from ladylilian/main-login-register
+    
+    Main login register
+
+commit 1a8bc97cfb4c9dc6e1f501462ffdd00309204404
+Author: jordansylee <jordansylee@gmail.com>
+Date:   Sat May 28 17:39:59 2022 +0800
+
+    Ranking page css completed
+
+commit 5810698c4dce3a511b9bb4b7955c48f5ad2d2523
+Author: jordansylee <jordansylee@gmail.com>
+Date:   Sat May 28 14:56:25 2022 +0800
+
+    ranking page shows personal record
+    
+    the top box is now showing user's max_score rather than current_score
+
+commit 34f54d398adfa6d07c51bb4d1a7cea08d3e7d3ba
+Author: jordansylee <jordansylee@gmail.com>
+Date:   Sat May 28 14:38:40 2022 +0800
+
+    username is taken on Register page
+    
+    If username is already taken, flash message and let user try a different one
+
+commit 7925f22987cabb564f24a38043ef40fc734cd9c9
+Merge: e827afa fd1fd2f
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Sat May 28 03:02:02 2022 +0800
+
+    Merge pull request #23 from ladylilian/game/score
+    
+    adding current score above the game board.
+
+commit fd1fd2fe862b9ec8e4f3404552bd81eec5d62926
+Author: ladylilian <f22542727@gmail.com>
+Date:   Sat May 28 03:00:41 2022 +0800
+
+    adding current score above the game board.
+
+commit e827afa5d995758a08c1d2405a9993f4e2393cb3
+Merge: 4e65a52 79bf833
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Thu May 26 19:36:40 2022 +0800
+
+    Merge pull request #20 from ladylilian/login-register-page
+    
+    Login register page
+
+commit 79bf833cbb742d9d5b93c128d0c3c34e3be913f6
+Merge: c79dcf9 4e65a52
+Author: ladylilian <f22542727@gmail.com>
+Date:   Thu May 26 19:36:08 2022 +0800
+
+    Merge branch 'main' into login-register-page
+
+commit c79dcf96a268c998e4077530625f600821d9f51b
+Author: jordansylee <jordansylee@gmail.com>
+Date:   Thu May 26 18:46:53 2022 +0800
+
+    Show current score on ranking page if user is logged in
+    
+    default value = " - "
+
+commit 404a4f8348a9fdd3060367f8741fffac063713f2
+Author: jordansylee <jordansylee@gmail.com>
+Date:   Thu May 26 18:39:49 2022 +0800
+
+    Created Login page & Register page separately
+
+commit 4e65a520349a02bde3d710ca650facba29d7212d
+Merge: 5de380f 99e75d3
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Thu May 26 14:53:32 2022 +0800
+
+    Merge pull request #19 from ladylilian/login-register-page
+    
+    Login register page
+
+commit 5de380ffe6d4d939bd8ea8a5df83db387d0e19a3
+Author: ladylilian <f22542727@gmail.com>
+Date:   Thu May 26 14:24:17 2022 +0800
+
+    update main
+
+commit 99e75d30c4edccb512af6ec5439bb4156afc51d7
+Author: jordansylee <jordansylee@gmail.com>
+Date:   Thu May 26 14:24:10 2022 +0800
+
+    Update app.py
+
+commit b820ac4f1d0480bacf763197ec08f6a52e857241
+Author: jordansylee <jordansylee@gmail.com>
+Date:   Thu May 26 14:14:23 2022 +0800
+
+    rearranged files
+
+commit 0133d8a5170a5f2f0d94b24973d2a4c77a62262f
+Merge: ffb99a8 95fdf31
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Thu May 26 13:39:25 2022 +0800
+
+    Merge pull request #13 from ladylilian/update-main
+    
+    Add files via upload
+
+commit 95fdf311d2948433ea49eb2c1271baf4aa4f05a3
+Author: jordansylee <102458345+jordansylee@users.noreply.github.com>
+Date:   Thu May 26 13:38:52 2022 +0800
+
+    Add files via upload
+
+commit ffb99a880803fcac42635fe9f8313ba20c78093c
+Merge: 591c23c 8602536
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Thu May 26 13:07:20 2022 +0800
+
+    Merge pull request #12 from ladylilian/game_page
+    
+    fade effects on buttons when clicking them.
+
+commit 860253636e957cf6e04ae32e985be7f761347a75
+Author: ladylilian <f22542727@gmail.com>
+Date:   Wed May 25 23:06:45 2022 +0800
+
+    fade effects on buttons when clicking them.
+
+commit 591c23c10c141c0977818d599cefcafdce884a23
+Merge: 67e605e 47f38bb
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Wed May 25 01:11:13 2022 +0800
+
+    Merge pull request #10 from ladylilian/game_page
+    
+    use button to do calculation, next I will be doing the fadrout effect…
+
+commit 47f38bb9d460352aff72076617c13385306f6696
+Author: ladylilian <f22542727@gmail.com>
+Date:   Wed May 25 01:10:21 2022 +0800
+
+    use button to do calculation, next I will be doing the fadrout effect and limit the times of click
+
+commit 67e605e1d75da862977c74c1c00b97fdd6a72710
+Merge: c9c45cb 8882e1a
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Mon May 23 10:30:23 2022 +0800
+
+    Merge pull request #9 from ladylilian/game_page
+    
+    Game page
+
+commit 8882e1a32fc88eeb78bdab7f15cc8bae27f21ee2
+Merge: c9c45cb 5af46ac
+Author: ladylilian <f22542727@gmail.com>
+Date:   Mon May 23 10:27:46 2022 +0800
+
+    fixing merge conflicts
+
+commit 5af46ac9dfa5c86ed4948116f8b65af36ed31430
+Author: jordansylee <jordansylee@gmail.com>
+Date:   Sun May 22 17:14:42 2022 +0800
+
+    this is the merged version
+
+commit 2944dd32b9295973038dd77f4e3387557deb6a14
+Author: jordansylee <jordansylee@gmail.com>
+Date:   Sun May 22 16:58:38 2022 +0800
+
+    Create CITS3403 Project.docx
+
+commit c9c45cb55d523ef32bb9ab9064634199a1fe2d82
+Merge: 2d00b27 b485f99
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Sun May 22 16:32:30 2022 +0800
+
+    Merge pull request #8 from ladylilian/game_page
+    
+    Game page
+
+commit b485f99cc50ac8d3a2ea87f58a9c06a2e265d3a6
+Author: ladylilian <f22542727@gmail.com>
+Date:   Sun May 22 16:29:32 2022 +0800
+
+    update game_page functions
+
+commit b3cfef1d18f84684693dd8601f6d01b8a95dce87
+Author: jordansylee <jordansylee@gmail.com>
+Date:   Sun May 22 16:21:26 2022 +0800
+
+    created blank Login Page
+
+commit 3d1031c4952f13641ec2a25ee9189cddbed308f2
+Author: jordansylee <jordansylee@gmail.com>
+Date:   Sun May 22 15:42:59 2022 +0800
+
+    hi
+
+commit 3c73b7ad2170bb7592807e7d1e6ebeb7868516ab
+Author: jordansylee <102458345+jordansylee@users.noreply.github.com>
+Date:   Sun May 22 15:40:30 2022 +0800
+
+    Add files via upload
+
+commit c0c9154f66fca65fde8b62a8d241e792e669232c
+Author: jordansylee <102458345+jordansylee@users.noreply.github.com>
+Date:   Sun May 22 15:40:04 2022 +0800
+
+    Add files via upload
+
+commit 9102a238ac1526f62be864672b5757f95176859a
+Author: jordansylee <102458345+jordansylee@users.noreply.github.com>
+Date:   Sun May 22 15:38:42 2022 +0800
+
+    Add files via upload
+
+commit c820cea4afa0e1b9c8fdea090cec67097573981c
+Author: jordansylee <102458345+jordansylee@users.noreply.github.com>
+Date:   Sun May 22 15:37:25 2022 +0800
+
+    Delete README.md
+
+commit c92d8c31cc1cf4d4b42e6508ead260cd2fb1b1ed
+Author: jordansylee <102458345+jordansylee@users.noreply.github.com>
+Date:   Sun May 22 15:37:04 2022 +0800
+
+    Delete login-page.html
+
+commit bd4d50bbd6c61efd10bd85c65aa513e36de1d3c4
+Author: ladylilian <f22542727@gmail.com>
+Date:   Sun May 22 14:54:13 2022 +0800
+
+    update help and ranking buttons using toggle to open.
+
+commit bb1ea895c96c2fa887359fc77e8b546a1670080d
+Author: ladylilian <f22542727@gmail.com>
+Date:   Sun May 22 13:06:58 2022 +0800
+
+    update help button using toggle to stay at the page
+
+commit 968a1f76c7700fa04833f656e45f56eb7d1b7bd4
+Author: ladylilian <f22542727@gmail.com>
+Date:   Sun May 22 12:59:06 2022 +0800
+
+    generate nubers button, get clicked button value
+
+commit ef448125f032c2192afbd1dd6120be95e04481dc
+Author: ladylilian <f22542727@gmail.com>
+Date:   Wed May 11 22:52:19 2022 +0800
+
+    creating the header and the layout of game_page.
+
+commit 2d00b27c09b1d00dab85b1930f93b893123f59bb
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Thu May 5 13:38:45 2022 +0800
+
+    Add files via upload
+
+commit c3b5bfdeb11ff185b702a3047cbffea1f363d565
+Author: ladylilian <f22542727@gmail.com>
+Date:   Tue May 3 12:25:34 2022 +0800
+
+    add flask application
+
+commit 62707a47d39aaed90bf2eff1647d402016f3bbca
+Author: ladylilian <f22542727@gmail.com>
+Date:   Fri Apr 22 17:08:02 2022 +0800
+
+    add 4 numbers buttons and 4 symbols buttons.
+
+commit bab2ea1c42ea9500d6f7566bac99a189d81d424d
+Author: jordansylee <jordansylee@gmail.com>
+Date:   Thu Apr 21 11:31:29 2022 +0800
+
+    Create login-page.html
+
+commit 68dada6c53d3a778198bd06dcb4704b111b0c6f1
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Thu Apr 21 11:29:33 2022 +0800
+
+    Create Documents
+
+commit 5975271ba9cb3a38616bd7c4671b15115fbe6319
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Tue Mar 22 11:07:21 2022 +0800
+
+    Update README.md
+
+commit 7c863c4ed535f0e5f70ef4b601c868425e90ff5b
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Sun Mar 20 15:38:36 2022 +0800
+
+    Update README.md
+
+commit f10e2ad128238a5f7032b2eb26cf30586ff814ea
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Sun Mar 20 15:37:42 2022 +0800
+
+    Update README.md
+
+commit 3329b9bbbe6d68785c282febd64bc1b7faf023ba
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Thu Mar 17 18:49:08 2022 +0800
+
+    Update README.md
+
+commit 21935ead965b76e07d88001bfea8f6c7cc54f2ec
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Thu Mar 17 17:33:44 2022 +0800
+
+    Update README.md
+
+commit 8ded384f705e8dc68ad6f0e51c63b09446f9f989
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Thu Mar 17 17:28:36 2022 +0800
+
+    Update README.md
+
+commit b9133fb91af3328eecf2b9ee5ba74208c340301d
+Author: Lilian <88468270+ladylilian@users.noreply.github.com>
+Date:   Thu Mar 17 17:23:39 2022 +0800
+
+    Initial commit
