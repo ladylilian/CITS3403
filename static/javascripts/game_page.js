@@ -389,7 +389,10 @@ function giveUpShowAns(){
   generate_new();
   document.getElementById('give_upClose').setAttribute('disabled', '');
   document.getElementById('give_upClose').style.cursor = "default";
+  document.getElementById('give_upYes').setAttribute('disabled', '');
+  document.getElementById('give_upYes').style.cursor = "default";
   $(document.getElementById('answer')).addClass('active');
+  $(document.getElementById('restart')).addClass('active');
 }
 
 // Generate four numbers when the window is loaded
@@ -397,4 +400,3 @@ $(document).ready(function(){
   numbers = generate_new();
   console.log(numbers);
 });
-
