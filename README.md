@@ -2,16 +2,36 @@
 Make to 24 daily game web application for CITS3403 Project
 
 ## Purpose
-To tests player's mental arithmetic.</br>
+To tests player's mental arithmetic.<br><br>
 How to play:
 You are randomly given four digits, each from one to nine, with repetitions allowed.
-The objective is to use the four symbols of addition(+), subtraction(-), multiplication(×), and division(÷) to calculate the four given digits and make the result equals to 24.
+The objective is to use the four symbols of addition(+), subtraction(-), multiplication(×), and division(÷) to calculate the four given digits and make the result equals to 24.<br><br>
+Every time a player completed a round, meeting the goal of making four number cards equal to 24, they will score 100 points. And the top 8 players with the highest scores will be listed in the ranking board. 
 
-## architecture
+## Architecture
+To understand how we should build our database model, we first discussed what need to be displayed. In our game, the primary goal is to continue winning game rounds and scoring more points to rank higher up in the ranking board.<br>
+
+To identify the player who is currently playing the game requires an unique ID, for them to login requires their login details, and to store their game records such as the score of the current game and personal highest score.<br>
+
+To build the SQLAlchemy model, we created the Players classes define the database schema, each instance (player) of the model have the following key-value pairs:
+1. id (int, primary_key)
+2. username (string, unique)
+3. password (string, hashed)
+4. highest score (int, default=0)
+5. current score (int, default=0)
+6. date created (datetime)
+
 
 ## How to launch the web application
+First, install and create a virtual environment in the directory of our project folder then activate the virtual environment to install all the required the packages (e.g. flask, flask-sqlalchemy, etc.).
+
+In your Terminal or Command Prompt go to the folder that contains our app.py file then type "python app.py" in your terminal or command prompt you should see this output.<br>
+<img width="510" alt="image" src="https://user-images.githubusercontent.com/102458345/170899850-f2677796-9740-4fcc-ad49-cb3fec724234.png">
+
+Follow the link in "Running on:..." and the web application should be running on your local computer. The game will require you to register and login, once you logged in successfully, then you can start playing the 24 Game.
 
 ## Unit/Integration Testing
+To ensure the 
 
 ## Pre-Setup
 | Package | Site | Guide |
