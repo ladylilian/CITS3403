@@ -11,17 +11,8 @@ function generate_new() {
   for (var i = 0; i < n_html.length; i++) {
     n_html[i].value = numbers[i]
   }
-  // clear answer div
-  // document.getElementById('answer').innerHTML = ""
   return numbers;
 }
-
-// function clear_numbers() {
-//   var n_html = document.getElementsByClassName("number");
-//   for (var i = 0; i < n_html.length; i++) {
-//     n_html[i].value = ""
-//   }
-// }
 
 /**
  * Returns a random integer between min (inclusive) and max (inclusive)
@@ -199,7 +190,6 @@ function calculation(ClickBtnId){
   goal = 24;
   var score = document.getElementById('current_score').innerText;
   let counter = document.getElementById('stageCounter');
-  console.log(score);
   if (document.getElementById(ClickBtnId).value == goal){
     document.getElementById("clear_stage_opener").click();
     counter.addEventListener("click",()=>{
@@ -230,7 +220,7 @@ function calculation(ClickBtnId){
 var used_numbers = document.getElementsByClassName("invisible");
 $(document).ready(function(){
   var selected_numbers = document.getElementsByClassName("selectedNum");
-  // var used_numbers = document.getElementsByClassName("invisible");
+  var toggled_numbers = document.getElementsByClassName("toggledNum");
   var selected_Numids = [];
   var selectedNums = []
   $(".number").toggle(
@@ -244,8 +234,8 @@ $(document).ready(function(){
         }
       };
       $(this).addClass("selectedNum");
+      $(this).addClass("toggledNum");
       $(this).closest('div').find(".number").not(this).removeClass('selectedNum');
-
       // prevent players adding a number right after the first one into eqution, ex: 2,3
       if (typeof eqution[0] !== 'undefined'){
         if ($.isNumeric(eqution[0]) && (isOperator(eqution[1]) == false)){
@@ -262,24 +252,21 @@ $(document).ready(function(){
         eqution.push(ans);
         selected_numbers[0].value = ans;
         var Clickbtn = selected_Numids.slice(-2);
-        console.log(Clickbtn)
         buttonAnimation(Clickbtn);
         $(document.getElementById(Clickbtn[0])).addClass('invisible');
-        console.log(used_numbers);
         selected_Numids.shift();
         var ClickBtnId = selected_Numids;
-        console.log(used_numbers.length);
         if (used_numbers.length <= 3) {
           for(let i = 0; i < symbolButtons.length; i++){
             if ($(document.getElementById(selected_Symids[i])).hasClass("selectedSym")){
                 document.getElementById(selected_Symids[i]).click();
             };
           };
-          // if (this.id !== document.getElementsByClassName("selectedNum")[0].id){
-          //   var click_id = document.getElementsByClassName("selectedNum")[0].id
-          //   var resumeClickBtn = document.getElementById(click_id)
-          //   resumeClickBtn.click();
-          // };  
+        };
+        if (toggled_numbers.length == 4){
+          for(var i = 0; i < numberButtons.length; i++){
+            numberButtons[i].click();
+          };
         };
       };
       if (used_numbers.length == 3) {
@@ -324,7 +311,6 @@ $(document).ready(function(){
       };
       selected_Symids.push(this.id);
       eqution.push(this.value);
-      // console.log(used_numbers)
       console.log(eqution)
     },
 
@@ -355,7 +341,6 @@ function buttonAnimation(listOftwoClickBtn){
   document.getElementById(id_1).style.transform = translate3dValue;
   document.getElementById(id_1).style.zIndex = -1
   $(document).ready(function(){
-    console.log(used_numbers.length);
     if (used_numbers.length < 2){
       $(document.getElementById(id_1)).animate({opacity: 0});
     };
@@ -372,8 +357,7 @@ function getClickBtnPosition(Clickbtn) {
   return [x,y];
 };
 
-// const resrtButtons = document.querySelectorAll('[reset]')
-
+// Reset the game
 var numbers = []
 function reset(){
   // event.preventDefault();
@@ -397,10 +381,22 @@ function reset(){
     n_html[i].value = numbers[i]
   };
 };
-  
+ 
+// Give up button and show the answer
+function giveUpShowAns(){
+  const ans = solve(numbers, 24);
+  document.getElementById('answer').innerHTML = ans;
+  generate_new();
+  document.getElementById('give_upClose').setAttribute('disabled', '');
+  document.getElementById('give_upClose').style.cursor = "default";
+  document.getElementById('give_upYes').setAttribute('disabled', '');
+  document.getElementById('give_upYes').style.cursor = "default";
+  $(document.getElementById('answer')).addClass('active');
+  $(document.getElementById('restart')).addClass('active');
+}
 
+// Generate four numbers when the window is loaded
 $(document).ready(function(){
   numbers = generate_new();
   console.log(numbers);
 });
-
