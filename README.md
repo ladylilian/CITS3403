@@ -31,7 +31,7 @@ In your Terminal or Command Prompt go to the folder that contains our app.py fil
 Follow the link in "Running on:..." and the web application should be running on your local computer. The game will require you to register and login, once you logged in successfully, then you can start playing the 24 Game.
 
 ## Unit/Integration Testing
-To ensure the 
+Please run "python test.py".
 
 ## Pre-Setup
 | Package | Site | Guide |
