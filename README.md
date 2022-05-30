@@ -30,6 +30,17 @@ In your Terminal or Command Prompt go to the folder that contains our app.py fil
 
 Follow the link in "Running on:..." and the web application should be running on your local computer. The game will require you to register and login, once you logged in successfully, then you can start playing the 24 Game.
 
+## How to Play:
+### BUGs!! Please only use these two method to play the game
+Metohd 1: Use a number button and an operator order to click (only click each number button once), for example, 1+5+2+6, or 2x5-1÷6
+Method 2: (make two pairs of numbers), for example, (1+2)x(6-5)
+
+![image](https://user-images.githubusercontent.com/88468270/170910529-d617ee45-2282-4794-8b0c-2e114d03b004.png)
+
+
+
+
+
 ## Unit/Integration Testing
 Please run "python test.py".
 
