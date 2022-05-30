@@ -33,7 +33,7 @@ Follow the link in "Running on:..." and the web application should be running on
 ## How to Play:
 ### BUGs!! Please only use these two method to play the game
 Metohd 1: Use a number button and an operator order to click (only click each number button once), for example, 9+6+7+2, or 7x2-9÷6
-Method 2: If you want to make two pairs of numbers, please click the number button again, for example, (7+2)x(3+4), click 8 again; (3+4)x(7+2), click 16 again
+Method 2: If you want to make two pairs of numbers, please click the number button again, for example, (7+2)x(3+4), as we can see in Image 2, it will become 16 and 8, click 8 again; (3+4)x(7+2), click 16 again
 
 Image 1:
 ![image](https://user-images.githubusercontent.com/88468270/170912438-843cf230-dd7f-49a6-9cec-10f66cce7ec5.png)
