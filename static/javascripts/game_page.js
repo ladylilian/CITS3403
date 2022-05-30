@@ -196,17 +196,6 @@ function calculation(ClickBtnId){
       score = parseInt(score) + 100;
       document.getElementById('current_score').innerText = score;
     });
-  // for(var i = 0; i < numberButtons.length; i++){
-  //   if(!(numberButtons[i].classList.contains('invisible'))){
-  //     var ans = $(numberButtons[i]).value;
-  //   };
-  // };
-  // if (ans == goal){
-  //   document.getElementById("clear_stage_opener").click();
-  //   counter.addEventListener("click",()=>{
-  //     score = parseInt(score) + 100;
-  //     document.getElementById('current_score').innerText = score;
-  //   });
     selected_numbers = []
     selected_symbols = []
     selected_Numids = []
@@ -229,10 +218,9 @@ function calculation(ClickBtnId){
 };
 
 var used_numbers = document.getElementsByClassName("invisible");
-var selected_numbers = document.getElementsByClassName("selectedNum");
-var toggled_numbers = document.getElementsByClassName("toggledNum");
-var toggled_symbols = document.getElementsByClassName("toggledSym");
 $(document).ready(function(){
+  var selected_numbers = document.getElementsByClassName("selectedNum");
+  var toggled_numbers = document.getElementsByClassName("toggledNum");
   var selected_Numids = [];
   var selectedNums = []
   $(".number").toggle(
@@ -248,11 +236,6 @@ $(document).ready(function(){
       $(this).addClass("selectedNum");
       $(this).addClass("toggledNum");
       $(this).closest('div').find(".number").not(this).removeClass('selectedNum');
-      if (document.getElementsByClassName("toggledNum")[0] != document.getElementsByClassName("selectedNum")[0]){
-        var toggledId = document.getElementsByClassName("toggledNum")[0].id;
-        document.getElementById(toggledId).click();
-        $(document.getElementById(toggledId)).removeClass('toggledNum')
-      }
       // prevent players adding a number right after the first one into eqution, ex: 2,3
       if (typeof eqution[0] !== 'undefined'){
         if ($.isNumeric(eqution[0]) && (isOperator(eqution[1]) == false)){
@@ -273,7 +256,6 @@ $(document).ready(function(){
         $(document.getElementById(Clickbtn[0])).addClass('invisible');
         selected_Numids.shift();
         var ClickBtnId = selected_Numids;
-        console.log(ClickBtnId)
         if (used_numbers.length <= 3) {
           for(let i = 0; i < symbolButtons.length; i++){
             if ($(document.getElementById(selected_Symids[i])).hasClass("selectedSym")){
@@ -281,11 +263,11 @@ $(document).ready(function(){
             };
           };
         };
-        // if (toggled_numbers.length == 4){
-        //   for(var i = 0; i < numberButtons.length; i++){
-        //     numberButtons[i].click();
-        //   };
-        // };
+        if (toggled_numbers.length == 4){
+          for(var i = 0; i < numberButtons.length; i++){
+            numberButtons[i].click();
+          };
+        };
       };
       if (used_numbers.length == 3) {
         calculation(ClickBtnId)
@@ -304,18 +286,10 @@ $(document).ready(function(){
           symbolButtons[i].disabled = true;
         }
       }
-      if (!(document.getElementsByClassName("toggledNum")[0]).classList.contains('selectedNum')){
-        if (($.isNumeric(eqution[0])) && (isOperator(eqution[1]) != true)) {
-        selected_Numids.pop();
-        selectedNums.pop();
-        eqution.pop();
-        console.log(eqution);
-        }
-      }
-      // selected_Numids.pop();
-      // selectedNums.pop();
-      // eqution.pop();
-      // console.log(eqution)
+      selected_Numids.pop();
+      selectedNums.pop();
+      eqution.pop();
+      console.log(eqution)
     }
   )
 });
@@ -327,13 +301,7 @@ $(document).ready(function(){
   $(".symbol").toggle(
     function() {
       $(this).addClass("selectedSym");
-      $(this).addClass("toggledSym");
       $(this).closest('div').find(".symbol").not(this).removeClass('selectedSym');
-      if (document.getElementsByClassName("toggledSym")[0] != document.getElementsByClassName("selectedSym")[0]){
-        var toggledId = document.getElementsByClassName("toggledSym")[0].id;
-        document.getElementById(toggledId).click();
-        $(document.getElementById(toggledId)).removeClass('toggledSym')
-      }
       if (typeof eqution[1] !== 'undefined'){
         if ((eqution.length == 2) && (isOperator(eqution[1]) == true)){
           if ((used_numbers.length <= 2)){
@@ -377,7 +345,7 @@ function buttonAnimation(listOftwoClickBtn){
       $(document.getElementById(id_1)).animate({opacity: 0});
     };
   });
-  // document.getElementById(id_2).focus();
+  document.getElementById(id_2).focus();
   document.getElementById(id_1).style.transition= ".5s ease transform";
 };
 
@@ -421,7 +389,10 @@ function giveUpShowAns(){
   generate_new();
   document.getElementById('give_upClose').setAttribute('disabled', '');
   document.getElementById('give_upClose').style.cursor = "default";
+  document.getElementById('give_upYes').setAttribute('disabled', '');
+  document.getElementById('give_upYes').style.cursor = "default";
   $(document.getElementById('answer')).addClass('active');
+  $(document.getElementById('restart')).addClass('active');
 }
 
 // Generate four numbers when the window is loaded
@@ -429,4 +400,3 @@ $(document).ready(function(){
   numbers = generate_new();
   console.log(numbers);
 });
-

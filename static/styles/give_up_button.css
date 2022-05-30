@@ -79,7 +79,7 @@ html, body {
 
 #give_upYes{
   position: absolute;
-  bottom: 80px;
+  bottom: 90px;
   font-size: 25px;
   font-weight: bold;
   color: #fff;
@@ -105,7 +105,7 @@ html, body {
   text-align: center;
   cursor: pointer;
 }
-#give_upYes:hover{
+#give_upYes:hover:enabled {
   color: #9bdc9b;
 }
 
@@ -115,9 +115,35 @@ html, body {
   font-size: 25px;
   font-weight: 800;
 }
-#answer:active{
+#answer.active{
   visibility: visible;
   opacity: 1;
   font-size: 25px;
   font-weight: 800;
+}
+
+#restart{
+  visibility: hidden;
+  opacity: 0;
+}
+
+#restart.active{
+  position: absolute;
+  bottom: 10px;
+  visibility: visible;
+  opacity: 1;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #78787e;
+  border-radius:10px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 3px 3px #525257;
+  text-align: center;
+  cursor: pointer;
+}
+
+#restart:hover {
+  color: #e87575;
 }
