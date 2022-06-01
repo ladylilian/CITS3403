@@ -64,7 +64,7 @@ CITS3403/
 ├── __pycache__
 |   └──  app.cpython-39.pyc
 ├── static/
-|   ├── scripts/
+|   ├── javascripts/
 |   └── styles/
 ├── templates/
 ├── app.py
