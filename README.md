@@ -61,12 +61,12 @@ Please run "python test.py".
 ## File Structure
 ```
 CITS3403/
-|
+├── __pycache__
+|   └──  app.cpython-39.pyc
 ├── static/
 |   ├── scripts/
 |   └── styles/
 ├── templates/
-|
 ├── app.py
 ├── jest.config.js
 ├── log.txt
